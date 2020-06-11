@@ -1,0 +1,31 @@
+.socialnetworks {
+    margin-top: 50px;
+
+    &__item {
+        display: flex;
+        margin-bottom: 20px;
+        li {
+            a {
+                margin-right: 20px;
+                background-color: $primaryColor;
+                color: $secondaryColor;
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+                text-align: center;
+                vertical-align: middle;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease-in;
+                &:hover {
+                    background-color: $secondaryColor;
+                    color: $primaryColor;
+                }
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
