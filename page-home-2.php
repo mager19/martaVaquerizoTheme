@@ -102,7 +102,9 @@ get_header(); ?>
                     
                     <?php if( $query->have_posts() ) : ?>
                         
-                        <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+                        <?php while ( $query->have_posts() ) : $query->the_post(); 
+                              global $product;
+                              $product = get_product( get_the_ID() ); ?>
                             <div class="ourproducts__item">
                                 <div class="ourproducts__item--image">
                                     <figure>
@@ -115,10 +117,11 @@ get_header(); ?>
                                     </figure>
                                     <div class="ourproducts__item--imageShare">
                                         <ul>
-                                            <li><a href="#">T</a></li>
-                                            <li><a href="#">T</a></li>
-                                            <li><a href="#">T</a></li>
-                                            <li><a href="#">T</a></li>
+                                            <li><a href="<?php the_permalink(); ?>"><i class="marta-search"></i></a></li>
+                                            <li><?php echo do_shortcode( '[yith_wcwl_add_to_wishlist]' ); ?></li>
+                                            <li><a href="#"><i class="marta-loop2"></i></a></li>
+                                            <li><a href="<?php echo $product->add_to_cart_url(); ?>"><i class="marta-cart"></i></a></li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -184,6 +187,7 @@ jQuery(".ourproducts__box").slick({
     dots: true,
     arrows: false,
     infinite: false,
+    autoplay:false,
     speed: 300,
     slidesToShow: 3,
     slidesToScroll: 1,

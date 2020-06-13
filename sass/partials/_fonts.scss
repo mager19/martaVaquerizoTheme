@@ -1,11 +1,11 @@
 @font-face {
     font-family: "marta";
-    src: url("fonts/socialnetwork/marta.eot?gwxcty");
-    src: url("fonts/socialnetwork/marta.eot?gwxcty#iefix")
+    src: url("fonts/socialnetwork/marta.eot?w1et3m");
+    src: url("fonts/socialnetwork/marta.eot?w1et3m#iefix")
             format("embedded-opentype"),
-        url("fonts/socialnetwork/marta.ttf?gwxcty") format("truetype"),
-        url("fonts/socialnetwork/marta.woff?gwxcty") format("woff"),
-        url("fonts/socialnetwork/marta.svg?gwxcty#marta") format("svg");
+        url("fonts/socialnetwork/marta.ttf?w1et3m") format("truetype"),
+        url("fonts/socialnetwork/marta.woff?w1et3m") format("woff"),
+        url("fonts/socialnetwork/marta.svg?w1et3m#marta") format("svg");
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -27,6 +27,21 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.marta-cart:before {
+    content: "\e93a";
+}
+.marta-search:before {
+    content: "\e986";
+}
+.marta-heart:before {
+    content: "\e9da";
+}
+.marta-cross:before {
+    content: "\ea0f";
+}
+.marta-loop2:before {
+    content: "\ea2e";
+}
 .marta-facebook:before {
     content: "\ea90";
 }
