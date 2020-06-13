@@ -6,6 +6,7 @@
     padding-top: 100px;
     padding-left: 16px;
     padding-right: 16px;
+    position: relative;
     @media screen and (min-width: 1024px) {
         align-items: flex-end;
         flex-direction: row;
@@ -57,6 +58,10 @@
                 display: inline-block;
             }
         }
+    }
+    &Slick {
+        position: relative;
+        z-index: 3;
     }
 }
 .hero {
@@ -140,8 +145,23 @@
 }
 
 .ourproducts {
+    position: relative;
+    z-index: 2;
     background-color: #151515;
+    @media screen and (min-width: 1280px) {
+        background: rgba(255, 255, 255, 1);
+        background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 1) 50%,
+            rgba(29, 27, 30, 1) 51%,
+            rgba(29, 27, 30, 1) 83%,
+            rgba(29, 27, 30, 1) 100%
+        );
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#1d1b1e', GradientType=0 );
+    }
     color: $primaryColor;
+
     &__box {
         margin-top: 47px;
         padding-left: 15px;
@@ -254,8 +274,30 @@
     &__margin {
         margin-top: 90px;
         padding-bottom: 60px;
+        position: relative;
+        z-index: 2;
         @media screen and (min-width: 1024px) {
             margin-top: 190px;
+        }
+        &:before {
+            @media screen and (min-width: 1280px) {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #151515;
+                z-index: 0;
+                transform: skewY(-35deg);
+                transform-origin: top left;
+                z-index: -1;
+            }
+            @media screen and (min-width: 1600px) {
+                transform: skewY(-25deg);
+            }
         }
     }
 }
