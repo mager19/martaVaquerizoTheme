@@ -154,10 +154,20 @@
     &__item {
         max-width: 373px;
         margin-bottom: 30px;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            .ourproducts__item--imageShare {
+                display: flex;
+                background-color: #c4c4c4;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+            }
+        }
         &--image {
             width: 100%;
             height: 553px;
-            background-color: #f5f3f4;
+            background-color: #efeeec;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -169,7 +179,9 @@
                 left: 0;
                 right: 0;
                 text-align: center;
-                padding-bottom: 10px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                display: none;
                 ul {
                     display: flex;
                     justify-content: center;
@@ -193,19 +205,25 @@
             justify-content: space-between;
             &Left {
                 .title--product {
-                    font-size: 18px;
-                    font-weight: normal;
-                    font-stretch: normal;
-                    font-style: normal;
-                    line-height: 1.67;
+                    a {
+                        color: $primaryColor;
+                        font-family: $fontPrimary;
+                        font-size: 18px;
+                        font-weight: normal;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: 1.67;
+                    }
                 }
                 span {
                     color: $white;
                     font-size: 14px;
-                }
-                strong {
-                    font-size: 20px;
-                    font-weight: bold;
+                    .woocommerce-Price-currencySymbol,
+                    &.amount {
+                        font-size: 20px;
+                        font-weight: bold;
+                        color: $primaryColor;
+                    }
                 }
             }
             &Right {
@@ -215,11 +233,16 @@
                 font-stretch: normal;
                 font-style: normal;
                 line-height: 2.14;
+                a {
+                    pointer-events: none;
+                    cursor: default;
+                }
             }
         }
     }
     &__margin {
         margin-top: 90px;
+        padding-bottom: 60px;
         @media screen and (min-width: 1024px) {
             margin-top: 190px;
         }

@@ -27,7 +27,7 @@ get_header(); ?>
                 </div>
             <?php endwhile; ?>
         <?php endif; ?>
-    </section>
+    </section><!-- Hero Image -->
 
     <section class="specialItems">
         <div class="container mx-auto">
@@ -39,10 +39,8 @@ get_header(); ?>
                 <?php endwhile; ?>
             <?php endif; ?>
         </div>
-    </section>
+    </section><!-- Item Secondary Menu -->
     <section class="ourproducts">
-
-        
         <div class="container mx-auto collectionSlick">
             <?php
                 $terms = get_terms([
@@ -76,225 +74,95 @@ get_header(); ?>
                                 </div>
                             </div>
                         </article><!-- Collection -->
-                         
-
             <?php
                     }
                     
                 }
-
         ?>
             
-            
-            
-         </div><!-- Collection Section -->
+        </div><!-- Collection Section -->
         
         <article class="ourproducts__margin">
             <h2 class="title__section title__section--gold">Nuestros Productos</h2>
             <div class="line line--gold"></div>
             <div class="container mx-auto">
                 <div class="ourproducts__box">
-                    <?php the_field("productos_shortcode"); ?>
-                    <!-- <div class="ourproducts__item">
-                        <div class="ourproducts__item--image">
-                            <figure>
-                                <a href="#">
-                                    <img src="img/anillo.png" alt="" />
-                                </a>
-                            </figure>
-                            <div class="ourproducts__item--imageShare">
-                                <ul>
-                                    <li><a href="#">T</a></li>
-                                    <li><a href="#">T</a></li>
-                                    <li><a href="#">T</a></li>
-                                    <li><a href="#">T</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="ourproducts__item--information">
-                            <div class="ourproducts__item--informationLeft">
-                                <h3 class="title--product">
-                                    <a href="#">Platinum CJ 2145</a>
-                                </h3>
-                                <div class="ourproducts__item--informationPrice">
-                                    <span>Precio:</span>
-                                    <strong>200€</strong>
+                    <?php //the_field("productos_shortcode"); ?>
+
+                    <?php
+                    
+                    $args = array(
+                        'posts_per_page' => 9,
+                        'post_type' => 'product',
+                    );
+                    
+                    $query = new WP_Query( $args );
+                    
+                    ?>
+                    
+                    <?php if( $query->have_posts() ) : ?>
+                        
+                        <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+                            <div class="ourproducts__item">
+                                <div class="ourproducts__item--image">
+                                    <figure>
+                                        <a href="<?php the_permalink( ); ?>">
+                                            <?php 
+                                                the_post_thumbnail( 'full' );
+                                            ?>
+                                            
+                                        </a>
+                                    </figure>
+                                    <div class="ourproducts__item--imageShare">
+                                        <ul>
+                                            <li><a href="#">T</a></li>
+                                            <li><a href="#">T</a></li>
+                                            <li><a href="#">T</a></li>
+                                            <li><a href="#">T</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="ourproducts__item--information">
+                                    <div class="ourproducts__item--informationLeft">
+                                        <h3 class="title--product">
+                                            <a href="<?php the_permalink( ); ?>"><?php the_title(); ?></a>
+                                        </h3>
+                                        <div class="ourproducts__item--informationPrice">
+                                            <span>Precio:</span>
+                                            <?php $price = get_post_meta( get_the_ID(), '_price', true ); ?>
+                                            <?php echo wc_price( $price ); ?>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="ourproducts__item--informationRight">
+                                        <?php echo wc_get_product_category_list($product->get_id()) ?> 
+                                        
+                                    </div>
                                 </div>
                             </div>
-                            <div class="ourproducts__item--informationRight">
-                                <span>Anillo</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ourproducts__item">
-                        <div class="ourproducts__item--image">
-                            <figure>
-                                <a href="#">
-                                    <img src="img/anillo.png" alt="" />
-                                </a>
-                            </figure>
-                            <div class="ourproducts__item--imageShare">
-                                <ul>
-                                    <li><a href="#">T</a></li>
-                                    <li><a href="#">T</a></li>
-                                    <li><a href="#">T</a></li>
-                                    <li><a href="#">T</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="ourproducts__item--information">
-                            <div class="ourproducts__item--informationLeft">
-                                <h3 class="title--product">
-                                    <a href="#">Platinum CJ 2145</a>
-                                </h3>
-                                <div class="ourproducts__item--informationPrice">
-                                    <span>Precio:</span>
-                                    <strong>200€</strong>
-                                </div>
-                            </div>
-                            <div class="ourproducts__item--informationRight">
-                                <span>Anillo</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ourproducts__item">
-                        <div class="ourproducts__item--image">
-                            <figure>
-                                <a href="#">
-                                    <img src="img/anillo.png" alt="" />
-                                </a>
-                            </figure>
-                            <div class="ourproducts__item--imageShare">
-                                <ul>
-                                    <li><a href="#">T</a></li>
-                                    <li><a href="#">T</a></li>
-                                    <li><a href="#">T</a></li>
-                                    <li><a href="#">T</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="ourproducts__item--information">
-                            <div class="ourproducts__item--informationLeft">
-                                <h3 class="title--product">
-                                    <a href="#">Platinum CJ 2145</a>
-                                </h3>
-                                <div class="ourproducts__item--informationPrice">
-                                    <span>Precio:</span>
-                                    <strong>200€</strong>
-                                </div>
-                            </div>
-                            <div class="ourproducts__item--informationRight">
-                                <span>Anillo</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ourproducts__item">
-                        <div class="ourproducts__item--image">
-                            <figure>
-                                <a href="#">
-                                    <img src="img/anillo.png" alt="" />
-                                </a>
-                            </figure>
-                            <div class="ourproducts__item--imageShare">
-                                <ul>
-                                    <li><a href="#">T</a></li>
-                                    <li><a href="#">T</a></li>
-                                    <li><a href="#">T</a></li>
-                                    <li><a href="#">T</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="ourproducts__item--information">
-                            <div class="ourproducts__item--informationLeft">
-                                <h3 class="title--product">
-                                    <a href="#">Platinum CJ 2145</a>
-                                </h3>
-                                <div class="ourproducts__item--informationPrice">
-                                    <span>Precio:</span>
-                                    <strong>200€</strong>
-                                </div>
-                            </div>
-                            <div class="ourproducts__item--informationRight">
-                                <span>Anillo</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ourproducts__item">
-                        <div class="ourproducts__item--image">
-                            <figure>
-                                <a href="#">
-                                    <img src="img/anillo.png" alt="" />
-                                </a>
-                            </figure>
-                            <div class="ourproducts__item--imageShare">
-                                <ul>
-                                    <li><a href="#">T</a></li>
-                                    <li><a href="#">T</a></li>
-                                    <li><a href="#">T</a></li>
-                                    <li><a href="#">T</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="ourproducts__item--information">
-                            <div class="ourproducts__item--informationLeft">
-                                <h3 class="title--product">
-                                    <a href="#">Platinum CJ 2145</a>
-                                </h3>
-                                <div class="ourproducts__item--informationPrice">
-                                    <span>Precio:</span>
-                                    <strong>200€</strong>
-                                </div>
-                            </div>
-                            <div class="ourproducts__item--informationRight">
-                                <span>Anillo</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ourproducts__item">
-                        <div class="ourproducts__item--image">
-                            <figure>
-                                <a href="#">
-                                    <img src="img/anillo.png" alt="" />
-                                </a>
-                            </figure>
-                            <div class="ourproducts__item--imageShare">
-                                <ul>
-                                    <li><a href="#">T</a></li>
-                                    <li><a href="#">T</a></li>
-                                    <li><a href="#">T</a></li>
-                                    <li><a href="#">T</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="ourproducts__item--information">
-                            <div class="ourproducts__item--informationLeft">
-                                <h3 class="title--product">
-                                    <a href="#">Platinum CJ 2145</a>
-                                </h3>
-                                <div class="ourproducts__item--informationPrice">
-                                    <span>Precio:</span>
-                                    <strong>200€</strong>
-                                </div>
-                            </div>
-                            <div class="ourproducts__item--informationRight">
-                                <span>Anillo</span>
-                            </div>
-                        </div>
-                    </div> -->
+                        <?php endwhile; ?>
+                        
+                    <?php endif; ?>
+                    
+                    <?php wp_reset_query(); ?>
+                    
+
+
+                    
+                    
                 </div>
             </div>
         </article><!-- Nuestros Productos -->
-    </section>
+        
+    </section><!-- Collection and Our products -->
     <aside class="instagram">
         <?php echo do_shortcode('[elfsight_instagram_feed id="1"]'); ?>
-    </aside>
-    <!--iNSTAGRAM-->
+    </aside><!--Instagram-->
     <aside class="cta">
         <div class="cta__information">
             <?php the_field('cta'); ?>
         </div>
-    </aside>
-    <!--CTA-->
+    </aside><!--CTA-->
 </main>
 
 <?php
@@ -309,4 +177,47 @@ get_footer();
             dots: true
         });
     });
+// Slick
+
+            
+jQuery(".ourproducts__box").slick({
+    dots: true,
+    arrows: false,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+        {
+            breakpoint: 1366,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
+                dots: true,
+            },
+        },
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+            },
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+            },
+        },
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+    ],
+});
+            
+
+
+
 </script>
