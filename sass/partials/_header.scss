@@ -1,109 +1,110 @@
 .header {
-	background-color: $black;
-	color: $primaryColor;
-	padding-top: 31px;
-	padding-bottom: 36px;
-	position: relative;
-	&__top {
-		margin-bottom: 10px;
-		display: flex;
-		justify-content: center;
-		align-items: flex-end;
-		position: relative;
-		margin-bottom: 32px;
-	}
+    background-color: $black;
+    color: $primaryColor;
+    padding-top: 31px;
+    padding-bottom: 36px;
+    position: relative;
+    &__top {
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        position: relative;
+        margin-bottom: 32px;
+    }
 
-	.logo {
-		max-width: 182px;
-		margin-right: auto;
-		margin-left: auto;
-	}
+    .logo {
+        max-width: 182px;
+        margin-right: auto;
+        margin-left: auto;
+    }
 
-	.iconCart {
-		position: absolute;
-		right: 0;
-		bottom: 0;
-		span {
-			color: $primaryColor;
-		}
-		.ast-icon-shopping-basket {
-			color: $primaryColor;
-		}
-	}
+    .iconCart {
+        position: absolute;
+        right: 15px;
+        bottom: 0;
+        span {
+            color: $primaryColor;
+        }
+        .ast-icon-shopping-basket {
+            color: $primaryColor;
+        }
+    }
 
-	&__information {
-		font-size: 16px;
-		font-weight: bold;
-		font-stretch: normal;
-		font-style: normal;
-		line-height: 1.88;
-		font-family: $fontPrimary;
-		display: none;
-		@media screen and (min-width: 1280px) {
-			display: block;
-			position: absolute;
-			left: 61px;
-			bottom: 36px;
-		}
-	}
+    &__information {
+        font-size: 16px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.88;
+        font-family: $fontPrimary;
+        display: none;
+        @media screen and (min-width: 1280px) {
+            display: block;
+            position: absolute;
+            left: 61px;
+            bottom: 36px;
+        }
+    }
 }
 
 .nav-collapse,
 .nav-collapse * {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .nav-collapse,
 .nav-collapse ul {
-	list-style: none;
-	width: 100%;
-	float: left;
-	@media screen and (min-width: 768px) {
-		float: none;
-		display: flex;
-		justify-content: center;
-	}
+    list-style: none;
+    width: 100%;
+    float: left;
+    @media screen and (min-width: 768px) {
+        float: none;
+        display: flex !important;
+        justify-content: center;
+    }
 }
 
 .nav-collapse li {
-	float: left;
-	width: 100%;
-	@media screen and (min-width: 768px) {
-		float: none;
-		width: auto;
-	}
+    float: left;
+    width: 100%;
+    @media screen and (min-width: 768px) {
+        float: none;
+        width: auto !important;
+    }
 }
 
 .nav-collapse a {
-	color: $white;
-	text-decoration: none;
-	width: 100%;
-	background: $primaryColor;
-	border-bottom: 1px solid $white;
-	padding: 0.7em 1em;
-	float: left;
-	font-family: $fontPrimary;
-	line-height: 2.14;
-	text-transform: uppercase;
-	font-size: 14px;
-	font-weight: bold;
-	transition: opacity 0.3s ease-in;
-	&:hover {
-		opacity: 0.7;
-	}
-	@media screen and (min-width: 768px) {
-		float: none;
-		background: transparent;
-		color: $primaryColor;
-		border-bottom: 0;
-		width: auto;
-	}
+    color: $white;
+    text-decoration: none;
+    width: 100%;
+    background: $primaryColor;
+    border-bottom: 1px solid $white;
+    padding: 0.7em 1em;
+    float: left;
+    font-family: $fontPrimary;
+    line-height: 2.14;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    transition: opacity 0.3s ease-in;
+    &:hover {
+        opacity: 0.7;
+    }
+    @media screen and (min-width: 768px) {
+        float: none;
+
+        background: transparent;
+        color: $primaryColor;
+        border-bottom: 0;
+        width: auto;
+    }
 }
 
 @media screen and (min-width: 768px) {
-	.nav-collapse ul ul a {
-		display: none;
-	}
+    .nav-collapse ul ul a {
+        display: none;
+    }
 }
 
 /* ------------------------------------------
@@ -111,54 +112,54 @@
 --------------------------------------------- */
 
 @font-face {
-	font-family: "responsivenav";
-	src: url("../fonts/icons/responsivenav.eot");
-	src: url("../fonts/icons/responsivenav.eot?#iefix")
-			format("embedded-opentype"),
-		url("../fonts/icons/responsivenav.ttf") format("truetype"),
-		url("../fonts/icons/responsivenav.woff") format("woff"),
-		url("../fonts/icons/responsivenav.svg#responsivenav") format("svg");
-	font-weight: normal;
-	font-style: normal;
+    font-family: "responsivenav";
+    src: url("../fonts/icons/responsivenav.eot");
+    src: url("../fonts/icons/responsivenav.eot?#iefix")
+            format("embedded-opentype"),
+        url("../fonts/icons/responsivenav.ttf") format("truetype"),
+        url("../fonts/icons/responsivenav.woff") format("woff"),
+        url("../fonts/icons/responsivenav.svg#responsivenav") format("svg");
+    font-weight: normal;
+    font-style: normal;
 }
 
 .nav-toggle {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	text-decoration: none;
-	text-indent: -999px;
-	position: relative;
-	overflow: hidden;
-	width: 70px;
-	height: 55px;
-	float: right;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-decoration: none;
+    text-indent: -999px;
+    position: relative;
+    overflow: hidden;
+    width: 70px;
+    height: 55px;
+    float: right;
 }
 
 .nav-toggle:before {
-	color: $white; /* Edit this to change the icon color */
-	font-family: "responsivenav", sans-serif;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	font-size: 50px;
-	text-transform: none;
-	position: absolute;
-	content: "≡";
-	text-indent: 0;
-	text-align: center;
-	line-height: 55px;
-	speak: none;
-	width: 100%;
-	top: 0;
-	left: 0;
+    color: $white; /* Edit this to change the icon color */
+    font-family: "responsivenav", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    font-size: 50px;
+    text-transform: none;
+    position: absolute;
+    content: "≡";
+    text-indent: 0;
+    text-align: center;
+    line-height: 55px;
+    speak: none;
+    width: 100%;
+    top: 0;
+    left: 0;
 }
 
 .nav-toggle.active::before {
-	font-size: 50px;
-	content: "x";
+    font-size: 50px;
+    content: "x";
 }

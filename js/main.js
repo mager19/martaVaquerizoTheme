@@ -13,3 +13,5 @@ var navigation = responsiveNav(".nav-collapse", {
     open: function () { }, // Function: Open callback
     close: function () { }, // Function: Close callback
 });
+
+console.log("Hola");
