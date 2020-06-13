@@ -1,25 +1,41 @@
 .newsletter {
-	margin-top: 10px;
-	&__inputs {
-		display: flex;
-		margin-bottom: 10px;
-		input[type="text"] {
-			margin-right: 5px;
-			height: 40px;
-		}
-		input[type="button"] {
-			background-color: $primaryColor;
-			color: $secondaryColor;
-			padding: 10px;
-			cursor: pointer;
-			&:hover {
-				background-color: $secondaryColor;
-				color: $primaryColor;
-			}
-		}
-	}
-	&__checkbox {
-		width: 100%;
-		flex-basis: 100%;
-	}
+    margin-top: 10px;
+    &__inputs {
+        margin-bottom: 0;
+        input[type="text"] {
+            margin-right: 5px;
+            height: 40px;
+        }
+        input[type="submit"] {
+            background-color: $primaryColor !important;
+            color: $secondaryColor;
+            padding: 10px;
+            cursor: pointer;
+            &:hover {
+                background-color: $secondaryColor;
+                color: $primaryColor;
+            }
+        }
+    }
+    &__checkbox {
+        margin-top: 10px;
+    }
+}
+
+.wpforms-submit-container {
+    .wpforms-submit {
+        background-color: $primaryColor !important;
+        color: $secondaryColor;
+        padding: 7px 20px;
+        cursor: pointer;
+        font-weight: 700;
+        &:hover {
+            background-color: $secondaryColor !important;
+            color: $primaryColor !important;
+        }
+    }
+}
+
+.wpforms-container .wpforms-field {
+    padding: 0;
 }

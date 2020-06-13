@@ -1,40 +1,40 @@
 .line {
-	width: 144px;
-	height: 4px;
-	background-color: $secondaryColor;
-	margin-left: auto;
-	margin-right: auto;
-	&--dark {
-		background-color: $secondaryColor;
-	}
-	&--gold {
-		background-color: $primaryColor;
-	}
+    width: 176px;
+    height: 26px;
+    margin-left: auto;
+    margin-right: auto;
+    background-position: center;
+    background-size: cover;
+    &--dark {
+        background-image: url("../img/lineDark.png");
+    }
+    &--gold {
+        background-image: url("../img/line.png");
+    }
 }
 
 .clearfix {
-	clear: both;
+    clear: both;
 }
 
 .title {
-	&__section {
-		font-size: 33px;
-		font-weight: 500;
-		font-family: $fontSecondary;
-		line-height: 1.5;
-		margin-bottom: 30px;
-		text-align: center;
-		text-transform: capitalize;
-		letter-spacing: 1px;
-		@media screen and (min-width: 768px) {
-			font-size: 80px;
-			margin-bottom: 54px;
-		}
-		&--black {
-			color: $blackMedium;
-		}
-		&--gold {
-			color: $primaryColor;
-		}
-	}
+    &__section {
+        font-size: 33px;
+        font-weight: 500;
+        font-family: $fontSecondary;
+        line-height: 1.5;
+        margin-bottom: 10px;
+        text-align: center;
+        text-transform: capitalize;
+        letter-spacing: 1px;
+        @media screen and (min-width: 768px) {
+            font-size: 80px;
+        }
+        &--black {
+            color: $blackMedium;
+        }
+        &--gold {
+            color: $primaryColor;
+        }
+    }
 }

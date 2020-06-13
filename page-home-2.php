@@ -21,7 +21,7 @@ get_header(); ?>
             <?php while (have_rows('imagenes_hero_home', 'option')) : the_row(); ?>
                 <div class="hero__item">
                     <figure>
-                        <?php $image = get_sub_field('imagen', 'option'); ?> sub
+                        <?php $image = get_sub_field('imagen', 'option'); ?>
                         <img src="<?php echo $image['url'];  ?>" alt="" />
                     </figure>
                 </div>
