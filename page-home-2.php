@@ -119,7 +119,7 @@ get_header(); ?>
                                         <ul>
                                             <li><a href="<?php the_permalink(); ?>"><i class="marta-search"></i></a></li>
                                             <li><?php echo do_shortcode( '[yith_wcwl_add_to_wishlist]' ); ?></li>
-                                            <li><a href="#"><i class="marta-loop2"></i></a></li>
+                                            <li><a href="<?php the_permalink(); ?>"><i class="marta-loop2"></i></a></li>
                                             <li><a href="<?php echo $product->add_to_cart_url(); ?>"><i class="marta-cart"></i></a></li>
                                             
                                         </ul>
@@ -187,8 +187,8 @@ jQuery(".ourproducts__box").slick({
     dots: true,
     arrows: false,
     infinite: false,
-    autoplay:false,
-    speed: 300,
+    autoplay:true,
+    speed: 3000,
     slidesToShow: 3,
     slidesToScroll: 1,
     responsive: [
