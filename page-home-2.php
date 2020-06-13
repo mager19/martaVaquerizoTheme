@@ -41,201 +41,250 @@ get_header(); ?>
         </div>
     </section>
     <section class="ourproducts">
-        <h2 class="title__section title__section--gold">
-            Nuestros Productos
-        </h2>
-        <div class="line line--gold"></div>
-        <div class="container mx-auto">
-            <div class="ourproducts__box">
-                <?php the_field("productos_shortcode"); ?>
-                <!-- <div class="ourproducts__item">
-                    <div class="ourproducts__item--image">
-                        <figure>
-                            <a href="#">
-                                <img src="img/anillo.png" alt="" />
-                            </a>
-                        </figure>
-                        <div class="ourproducts__item--imageShare">
-                            <ul>
-                                <li><a href="#">T</a></li>
-                                <li><a href="#">T</a></li>
-                                <li><a href="#">T</a></li>
-                                <li><a href="#">T</a></li>
-                            </ul>
-                        </div>
+        <div class="container mx-auto collectionSlick">
+            
+            <article class="collection">
+                <div class="collection__left">
+                    <img src="http://marta.local/wp-content/uploads/2020/06/coleccion-lynx.png" alt="" srcset="">
+                </div>
+                <div class="collection__right">
+                    <h2 class="title__section title__section--gold collection__right--title">Colección Gold & Black</h2>
+                    <div class="line line--gold"></div>
+                    <div class="collection__right--description">
+                        <p>Lorem IpsuLorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                     </div>
-                    <div class="ourproducts__item--information">
-                        <div class="ourproducts__item--informationLeft">
-                            <h3 class="title--product">
-                                <a href="#">Platinum CJ 2145</a>
-                            </h3>
-                            <div class="ourproducts__item--informationPrice">
-                                <span>Precio:</span>
-                                <strong>200€</strong>
-                            </div>
-                        </div>
-                        <div class="ourproducts__item--informationRight">
-                            <span>Anillo</span>
-                        </div>
+                    <div class="collection__right--btn">
+                        <a href="#" class="btn btn--primary">Ver +</a>
                     </div>
                 </div>
-                <div class="ourproducts__item">
-                    <div class="ourproducts__item--image">
-                        <figure>
-                            <a href="#">
-                                <img src="img/anillo.png" alt="" />
-                            </a>
-                        </figure>
-                        <div class="ourproducts__item--imageShare">
-                            <ul>
-                                <li><a href="#">T</a></li>
-                                <li><a href="#">T</a></li>
-                                <li><a href="#">T</a></li>
-                                <li><a href="#">T</a></li>
-                            </ul>
-                        </div>
+            </article><!-- Collection -->
+            <article class="collection">
+                <div class="collection__left">
+                    <img src="http://marta.local/wp-content/uploads/2020/06/coleccion-lynx.png" alt="" srcset="">
+                </div>
+                <div class="collection__right">
+                    <h2 class="title__section title__section--gold collection__right--title">Colección Gold & Black</h2>
+                    <div class="line line--gold"></div>
+                    <div class="collection__right--description">
+                        <p>Lorem IpsuLorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                     </div>
-                    <div class="ourproducts__item--information">
-                        <div class="ourproducts__item--informationLeft">
-                            <h3 class="title--product">
-                                <a href="#">Platinum CJ 2145</a>
-                            </h3>
-                            <div class="ourproducts__item--informationPrice">
-                                <span>Precio:</span>
-                                <strong>200€</strong>
-                            </div>
-                        </div>
-                        <div class="ourproducts__item--informationRight">
-                            <span>Anillo</span>
-                        </div>
+                    <div class="collection__right--btn">
+                        <a href="#" class="btn btn--primary">Ver +</a>
                     </div>
                 </div>
-                <div class="ourproducts__item">
-                    <div class="ourproducts__item--image">
-                        <figure>
-                            <a href="#">
-                                <img src="img/anillo.png" alt="" />
-                            </a>
-                        </figure>
-                        <div class="ourproducts__item--imageShare">
-                            <ul>
-                                <li><a href="#">T</a></li>
-                                <li><a href="#">T</a></li>
-                                <li><a href="#">T</a></li>
-                                <li><a href="#">T</a></li>
-                            </ul>
-                        </div>
+            </article><!-- Collection -->
+            <article class="collection">
+                <div class="collection__left">
+                    <img src="http://marta.local/wp-content/uploads/2020/06/coleccion-lynx.png" alt="" srcset="">
+                </div>
+                <div class="collection__right">
+                    <h2 class="title__section title__section--gold collection__right--title">Colección Gold & Black</h2>
+                    <div class="line line--gold"></div>
+                    <div class="collection__right--description">
+                        <p>Lorem IpsuLorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                     </div>
-                    <div class="ourproducts__item--information">
-                        <div class="ourproducts__item--informationLeft">
-                            <h3 class="title--product">
-                                <a href="#">Platinum CJ 2145</a>
-                            </h3>
-                            <div class="ourproducts__item--informationPrice">
-                                <span>Precio:</span>
-                                <strong>200€</strong>
-                            </div>
-                        </div>
-                        <div class="ourproducts__item--informationRight">
-                            <span>Anillo</span>
-                        </div>
+                    <div class="collection__right--btn">
+                        <a href="#" class="btn btn--primary">Ver +</a>
                     </div>
                 </div>
-                <div class="ourproducts__item">
-                    <div class="ourproducts__item--image">
-                        <figure>
-                            <a href="#">
-                                <img src="img/anillo.png" alt="" />
-                            </a>
-                        </figure>
-                        <div class="ourproducts__item--imageShare">
-                            <ul>
-                                <li><a href="#">T</a></li>
-                                <li><a href="#">T</a></li>
-                                <li><a href="#">T</a></li>
-                                <li><a href="#">T</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="ourproducts__item--information">
-                        <div class="ourproducts__item--informationLeft">
-                            <h3 class="title--product">
-                                <a href="#">Platinum CJ 2145</a>
-                            </h3>
-                            <div class="ourproducts__item--informationPrice">
-                                <span>Precio:</span>
-                                <strong>200€</strong>
+            </article><!-- Collection -->
+         </div><!-- Collection Section -->
+        
+        <article class="ourproducts__margin">
+            <h2 class="title__section title__section--gold">Nuestros Productos</h2>
+            <div class="line line--gold"></div>
+            <div class="container mx-auto">
+                <div class="ourproducts__box">
+                    <?php the_field("productos_shortcode"); ?>
+                    <!-- <div class="ourproducts__item">
+                        <div class="ourproducts__item--image">
+                            <figure>
+                                <a href="#">
+                                    <img src="img/anillo.png" alt="" />
+                                </a>
+                            </figure>
+                            <div class="ourproducts__item--imageShare">
+                                <ul>
+                                    <li><a href="#">T</a></li>
+                                    <li><a href="#">T</a></li>
+                                    <li><a href="#">T</a></li>
+                                    <li><a href="#">T</a></li>
+                                </ul>
                             </div>
                         </div>
-                        <div class="ourproducts__item--informationRight">
-                            <span>Anillo</span>
+                        <div class="ourproducts__item--information">
+                            <div class="ourproducts__item--informationLeft">
+                                <h3 class="title--product">
+                                    <a href="#">Platinum CJ 2145</a>
+                                </h3>
+                                <div class="ourproducts__item--informationPrice">
+                                    <span>Precio:</span>
+                                    <strong>200€</strong>
+                                </div>
+                            </div>
+                            <div class="ourproducts__item--informationRight">
+                                <span>Anillo</span>
+                            </div>
                         </div>
                     </div>
+                    <div class="ourproducts__item">
+                        <div class="ourproducts__item--image">
+                            <figure>
+                                <a href="#">
+                                    <img src="img/anillo.png" alt="" />
+                                </a>
+                            </figure>
+                            <div class="ourproducts__item--imageShare">
+                                <ul>
+                                    <li><a href="#">T</a></li>
+                                    <li><a href="#">T</a></li>
+                                    <li><a href="#">T</a></li>
+                                    <li><a href="#">T</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ourproducts__item--information">
+                            <div class="ourproducts__item--informationLeft">
+                                <h3 class="title--product">
+                                    <a href="#">Platinum CJ 2145</a>
+                                </h3>
+                                <div class="ourproducts__item--informationPrice">
+                                    <span>Precio:</span>
+                                    <strong>200€</strong>
+                                </div>
+                            </div>
+                            <div class="ourproducts__item--informationRight">
+                                <span>Anillo</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ourproducts__item">
+                        <div class="ourproducts__item--image">
+                            <figure>
+                                <a href="#">
+                                    <img src="img/anillo.png" alt="" />
+                                </a>
+                            </figure>
+                            <div class="ourproducts__item--imageShare">
+                                <ul>
+                                    <li><a href="#">T</a></li>
+                                    <li><a href="#">T</a></li>
+                                    <li><a href="#">T</a></li>
+                                    <li><a href="#">T</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ourproducts__item--information">
+                            <div class="ourproducts__item--informationLeft">
+                                <h3 class="title--product">
+                                    <a href="#">Platinum CJ 2145</a>
+                                </h3>
+                                <div class="ourproducts__item--informationPrice">
+                                    <span>Precio:</span>
+                                    <strong>200€</strong>
+                                </div>
+                            </div>
+                            <div class="ourproducts__item--informationRight">
+                                <span>Anillo</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ourproducts__item">
+                        <div class="ourproducts__item--image">
+                            <figure>
+                                <a href="#">
+                                    <img src="img/anillo.png" alt="" />
+                                </a>
+                            </figure>
+                            <div class="ourproducts__item--imageShare">
+                                <ul>
+                                    <li><a href="#">T</a></li>
+                                    <li><a href="#">T</a></li>
+                                    <li><a href="#">T</a></li>
+                                    <li><a href="#">T</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ourproducts__item--information">
+                            <div class="ourproducts__item--informationLeft">
+                                <h3 class="title--product">
+                                    <a href="#">Platinum CJ 2145</a>
+                                </h3>
+                                <div class="ourproducts__item--informationPrice">
+                                    <span>Precio:</span>
+                                    <strong>200€</strong>
+                                </div>
+                            </div>
+                            <div class="ourproducts__item--informationRight">
+                                <span>Anillo</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ourproducts__item">
+                        <div class="ourproducts__item--image">
+                            <figure>
+                                <a href="#">
+                                    <img src="img/anillo.png" alt="" />
+                                </a>
+                            </figure>
+                            <div class="ourproducts__item--imageShare">
+                                <ul>
+                                    <li><a href="#">T</a></li>
+                                    <li><a href="#">T</a></li>
+                                    <li><a href="#">T</a></li>
+                                    <li><a href="#">T</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ourproducts__item--information">
+                            <div class="ourproducts__item--informationLeft">
+                                <h3 class="title--product">
+                                    <a href="#">Platinum CJ 2145</a>
+                                </h3>
+                                <div class="ourproducts__item--informationPrice">
+                                    <span>Precio:</span>
+                                    <strong>200€</strong>
+                                </div>
+                            </div>
+                            <div class="ourproducts__item--informationRight">
+                                <span>Anillo</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ourproducts__item">
+                        <div class="ourproducts__item--image">
+                            <figure>
+                                <a href="#">
+                                    <img src="img/anillo.png" alt="" />
+                                </a>
+                            </figure>
+                            <div class="ourproducts__item--imageShare">
+                                <ul>
+                                    <li><a href="#">T</a></li>
+                                    <li><a href="#">T</a></li>
+                                    <li><a href="#">T</a></li>
+                                    <li><a href="#">T</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ourproducts__item--information">
+                            <div class="ourproducts__item--informationLeft">
+                                <h3 class="title--product">
+                                    <a href="#">Platinum CJ 2145</a>
+                                </h3>
+                                <div class="ourproducts__item--informationPrice">
+                                    <span>Precio:</span>
+                                    <strong>200€</strong>
+                                </div>
+                            </div>
+                            <div class="ourproducts__item--informationRight">
+                                <span>Anillo</span>
+                            </div>
+                        </div>
+                    </div> -->
                 </div>
-                <div class="ourproducts__item">
-                    <div class="ourproducts__item--image">
-                        <figure>
-                            <a href="#">
-                                <img src="img/anillo.png" alt="" />
-                            </a>
-                        </figure>
-                        <div class="ourproducts__item--imageShare">
-                            <ul>
-                                <li><a href="#">T</a></li>
-                                <li><a href="#">T</a></li>
-                                <li><a href="#">T</a></li>
-                                <li><a href="#">T</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="ourproducts__item--information">
-                        <div class="ourproducts__item--informationLeft">
-                            <h3 class="title--product">
-                                <a href="#">Platinum CJ 2145</a>
-                            </h3>
-                            <div class="ourproducts__item--informationPrice">
-                                <span>Precio:</span>
-                                <strong>200€</strong>
-                            </div>
-                        </div>
-                        <div class="ourproducts__item--informationRight">
-                            <span>Anillo</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="ourproducts__item">
-                    <div class="ourproducts__item--image">
-                        <figure>
-                            <a href="#">
-                                <img src="img/anillo.png" alt="" />
-                            </a>
-                        </figure>
-                        <div class="ourproducts__item--imageShare">
-                            <ul>
-                                <li><a href="#">T</a></li>
-                                <li><a href="#">T</a></li>
-                                <li><a href="#">T</a></li>
-                                <li><a href="#">T</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="ourproducts__item--information">
-                        <div class="ourproducts__item--informationLeft">
-                            <h3 class="title--product">
-                                <a href="#">Platinum CJ 2145</a>
-                            </h3>
-                            <div class="ourproducts__item--informationPrice">
-                                <span>Precio:</span>
-                                <strong>200€</strong>
-                            </div>
-                        </div>
-                        <div class="ourproducts__item--informationRight">
-                            <span>Anillo</span>
-                        </div>
-                    </div>
-                </div> -->
             </div>
-        </div>
+        </article><!-- Nuestros Productos -->
     </section>
     <aside class="instagram">
         <?php echo do_shortcode('[elfsight_instagram_feed id="1"]'); ?>
@@ -251,3 +300,14 @@ get_header(); ?>
 
 <?php
 get_footer();
+?>
+
+<script>
+    jQuery(document).ready(function(){
+        jQuery('.collectionSlick').slick({
+            autoplay:true,
+            adaptiveHeight: true,
+            dots: true
+        });
+    });
+</script>
