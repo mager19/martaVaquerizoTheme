@@ -162,3 +162,17 @@
 	font-size: 50px;
 	content: "x";
 }
+
+/*HERO CONTENT*/
+.hero-content {
+	background-color: $gris;
+	display: flex;
+	align-items: center;
+	min-height: 270px;
+
+	.title__section {
+		font-size: 50px;
+		text-transform: capitalize;
+		margin-bottom: 40px;
+	}
+}
