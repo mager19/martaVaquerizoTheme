@@ -21,13 +21,13 @@ get_header(); ?>
 
 while (have_posts()) : the_post(); ?>
     <div class="container mx-auto content-area">
-        <div class="row">
-            <div class="w-full">
+        <div class="flex">
+            <div class="w-full px-4">
                 <div class="title__section title__section--gold">
                     <?php the_title(); ?>
                 </div>
             </div>
-            <div class="w-full">
+            <div class="w-full px-4">
                 <?php the_content(); ?>
             </div>
         </div>
