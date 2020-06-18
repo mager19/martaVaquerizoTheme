@@ -21,7 +21,7 @@ get_header(); ?>
 
 while (have_posts()) : the_post(); ?>
     <div class="container mx-auto content-area">
-        <div class="flex">
+        <div class="flex flex-wrap">
             <div class="w-full px-4">
                 <div class="title__section title__section--gold">
                     <?php the_title(); ?>
