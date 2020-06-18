@@ -1,10 +1,16 @@
 .widget {
-	&__title {
-		color: $primaryColor;
-		text-transform: uppercase;
-		font-weight: bold;
-		margin-bottom: 10px;
-		letter-spacing: 3px;
-		font-size: 13px;
-	}
+    &__title {
+        color: $primaryColor;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-bottom: 10px;
+        letter-spacing: 3px;
+        font-size: 13px;
+        @media screen and (min-width: 768px) {
+            font-size: 12px;
+        }
+        @media screen and (min-width: 992px) {
+            font-size: 13px;
+        }
+    }
 }

@@ -27,6 +27,14 @@
                 }
             }
         }
+        &--one {
+            p {
+                padding-right: 20px;
+                @media screen and (min-width: 1366px) {
+                    padding-right: 0;
+                }
+            }
+        }
     }
     &__bottom {
         background-color: $primaryColor;

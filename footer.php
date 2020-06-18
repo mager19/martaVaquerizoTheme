@@ -31,19 +31,19 @@
                  </div>
              </div>
              <!-- Footer One-->
-             <div class="footer__col footer__col--two md:w-2/12 xl:ml-auto">
+             <div class="footer__col footer__col--two md:w-3/12 lg:w-2/12 xl:ml-auto">
                  <?php the_field("footer_column_1", "option"); ?>
              </div>
              <!-- Footer Two-->
-             <div class="footer__col footer__col--three md:w-2/12">
+             <div class="footer__col footer__col--three md:w-3/12 lg:w-2/12">
                  <?php the_field("footer_column_2", "option"); ?>
              </div>
              <!-- Footer Three-->
-             <div class="footer__col footer__col--four md:w-2/12">
+             <div class="footer__col footer__col--four md:w-3/12 lg:w-2/12">
                  <?php the_field("footer_column_3", "option"); ?>
              </div>
              <!-- Footer Four-->
-             <div class="footer__col footer__col--five md:w-3/12 xl:w-2/12">
+             <div class="footer__col footer__col--five md:w-3/12 xl:w-2/12 md:hidden lg:block">
                  <?php the_field("footer_column_4", "option"); ?>
              </div>
              <!-- Footer Five-->
