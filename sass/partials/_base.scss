@@ -1,10 +1,20 @@
 ::selection {
-	background-color: $primaryColor;
-	color: $secondaryColor;
+    background-color: $primaryColor;
+    color: $secondaryColor;
 }
 
 body {
-	font-family: $fontPrimary;
-	color: $secondaryColor;
-	font-size: 16px;
+    font-family: $fontPrimary;
+    color: $secondaryColor;
+    font-size: 16px;
+    a {
+        text-decoration: underline;
+        color: $fontPrimary;
+    }
+    p {
+        margin-bottom: 16px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
 }
