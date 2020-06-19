@@ -15,28 +15,30 @@
 
 get_header(); ?>
 
-<main>
-    <section class="hero hidden">
-        <?php if (have_rows('imagenes_hero_home', 'option')) : ?>
-            <?php while (have_rows('imagenes_hero_home', 'option')) : the_row(); ?>
-                <div class="hero__item">
-                    <figure>
-                        <?php $image = get_sub_field('imagen', 'option'); ?>
-                        <img src="<?php echo $image['url'];  ?>" alt="" />
-                    </figure>
-                </div>
-            <?php endwhile; ?>
-        <?php endif; ?>
+<main class="bg-white">
+    <?php
+        $id = get_queried_object()->term_id;;
+        $taxonomy = 'coleccion';
+        $term = get_term( $id, $taxonomy );
+        $slug = $term->slug;
+        $name = $term->name;
+    ?>
+    <section class="hero__collection">
+       <div class="container mx-auto hero__collection--box">
+            <figure class="hero__collection--image md:w-4/12 lg:w-5/12">
+                    <img src="http://marta.local/wp-content/uploads/2020/06/image-coleccion.jpg" alt="" />
+            </figure>
+            <div class="hero__collection--information md:w-6/12 lg:w-5/12 md:ml-auto">
+                <h1 class="title__section">Colección Gold & Black</h1>
+                <div class="line line--gold mb-5"></div>
+                <p>Colección que nace de mi fascinación por la combinación cromática del negro y dorado, colores corporativos de la marca.</p>
+                <p>Es una colección dinámica, en contínuo crecimiento, que albergará diseños que mostarán esas influencias tan diversas con las que me identifico.</p>
+            </div>
+       </div>
     </section><!-- Hero Image -->
-    <section class="collection container mx-auto">
+    <section class="collection container md:mx-auto">
         <article class="collection__margin">
-            <?php
-                $id = get_queried_object()->term_id;;
-                $taxonomy = 'coleccion';
-                $term = get_term( $id, $taxonomy );
-                $slug = $term->slug;
-                $name = $term->name;
-            ?>
+            
             <h2 class="collection__title"><?php echo $name; ?></h2>
             <div class="line line--gold"></div>
             <div class="collection__information">
@@ -47,7 +49,6 @@ get_header(); ?>
                 <div class="collection__box">
                    
                     <?php
-                    
                     $args = array(
                         'posts_per_page' => 9,
                         'post_type' => 'product',
