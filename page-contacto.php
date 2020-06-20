@@ -20,7 +20,7 @@ get_header(); ?>
 <?php
 
 while (have_posts()) : the_post(); ?>
-    <div class="container mx-auto content-area">
+    <div class="container mx-auto content-area contacto">
         <div class="flex flex-wrap">
             <div class="w-full px-4">
                 <div class="title__section title__section--gold">
