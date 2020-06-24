@@ -1,0 +1,22 @@
+.shop {
+    &__box {
+        grid-template-columns: repeat(auto-fit, minmax(290px, 330px));
+        justify-content: center;
+        .ourproducts__item--informationPrice span,
+        .ourproducts__item--informationRight {
+            color: #71644e;
+        }
+    }
+}
+
+.widget-title {
+    span {
+        color: #71644e;
+        font-family: $fontSecondary;
+        font-size: 14px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 2.86;
+    }
+}

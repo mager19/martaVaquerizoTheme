@@ -60,3 +60,19 @@ function gforce_displaydate()
 	return date('Y');
 }
 add_shortcode('date', 'gforce_displaydate');
+
+
+// Sidebar Page Shop
+
+function lift_registerSidebar() {
+    register_sidebar( array(
+        'name'          => __( 'Page Shop', 'marta' ),
+        'id'            => 'page__shop',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</aside>',
+        'before_title'  => '<h5 class="footer__title--widget">',
+        'after_title'   => '</h5>',
+    ) );
+}
+
+add_action( 'widgets_init', 'lift_registerSidebar' );
