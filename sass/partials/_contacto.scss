@@ -1,69 +1,84 @@
 .contacto {
-    .wpforms-field {
-        margin-bottom: 2rem;
-        input {
-            background-color: #f3f3f3;
-            border: 2px solid $primaryColor !important;
-            color: #312d3b;
-            font-size: 16px;
-            font-weight: 700;
-            min-height: 80px;
-        }
-    }
-    .fieldNombre {
-        margin-bottom: 2rem;
+	.wpforms-field {
+		margin-bottom: 2rem;
+		input {
+			background-color: #f3f3f3;
+			border: 2px solid $primaryColor !important;
+			color: #312d3b;
+			font-size: 16px;
+			font-weight: 700;
+			min-height: 80px;
+		}
+	}
+	.fieldNombre {
+		margin-bottom: 2rem;
 
-        input {
-            float: left !important;
-            width: 48% !important;
+		input {
+			float: left !important;
+			width: 48% !important;
 
-            @media screen and (max-width: 768px) {
-                width: 100% !important;
-                float: none !important;
-            }
-            background-color: #f3f3f3;
-            border: 2px solid $primaryColor !important;
-            color: #312d3b;
-            font-size: 16px;
-            font-weight: 700;
-            min-height: 80px;
-        }
-    }
+			@media screen and (max-width: 768px) {
+				width: 100% !important;
+				float: none !important;
+			}
+			background-color: #f3f3f3;
+			border: 2px solid $primaryColor !important;
+			color: #312d3b;
+			font-size: 16px;
+			font-weight: 700;
+			min-height: 80px;
+		}
+	}
 
-    .fieldEmail {
-        margin-bottom: 2rem !important;
-        min-height: 80px;
+	.fieldEmail {
+		margin-bottom: 2rem !important;
+		min-height: 80px;
 
-        input {
-            float: right !important;
-            width: 48% !important;
-            @media screen and (max-width: 768px) {
-                width: 100% !important;
-                float: none !important;
-            }
-            background-color: #f3f3f3;
-            border: 2px solid $primaryColor !important;
-            color: #312d3b;
-            font-size: 16px;
-            font-weight: 700;
-            min-height: 80px;
-        }
-    }
+		input {
+			float: right !important;
+			width: 48% !important;
+			@media screen and (max-width: 768px) {
+				width: 100% !important;
+				float: none !important;
+			}
+			background-color: #f3f3f3;
+			border: 2px solid $primaryColor !important;
+			color: #312d3b;
+			font-size: 16px;
+			font-weight: 700;
+			min-height: 80px;
+		}
+	}
 
-    .fieldMensaje {
-        textarea {
-            background-color: #f3f3f3;
-            border: 2px solid $primaryColor !important;
-            color: #312d3b;
-            font-size: 16px;
-            font-weight: 700;
-            min-height: 80px;
-            padding: 1rem;
-        }
-    }
+	.fieldMensaje {
+		textarea {
+			background-color: #f3f3f3;
+			border: 2px solid $primaryColor !important;
+			color: #312d3b;
+			font-size: 16px;
+			font-weight: 700;
+			min-height: 80px;
+			padding: 1rem;
+		}
+	}
 
-    .choice-1 {
-        align-items: center;
-        display: flex;
-    }
+	.choice-1 {
+		align-items: center;
+		display: flex;
+	}
+}
+
+.items__emails {
+	a {
+		color: #71644e;
+		font-size: 25px;
+	}
+}
+
+.contacto {
+	.socialnetworks__item {
+		a {
+			text-decoration: none;
+		}
+	}
 }
