@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header(); ?>
 
-
+<?php get_template_part("inc/hero", "content"); ?>
 <div class="container mx-auto content-area">
 	<div class="flex flex-wrap">
 
