@@ -132,7 +132,15 @@ span.onsale {
 }
 
 // Fix button
-
+.menu-toggle,
+button,
+.ast-button,
+.ast-custom-button,
+.button,
+input#submit,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
 .woocommerce a.button,
 .woocommerce button.button,
 .woocommerce .woocommerce-message a.button,
@@ -150,7 +158,7 @@ span.onsale {
 .wc-block-grid__products .wc-block-grid__product .wp-block-button__link,
 .wc-block-grid__product-onsale {
     background-color: transparent;
-    border: 1px solid #71644e;
+    border: 1px solid #71644e !important;
     color: #71644e;
     padding-top: 11px !important;
     padding-bottom: 11px !important;
