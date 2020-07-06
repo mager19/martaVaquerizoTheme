@@ -20,3 +20,167 @@
         line-height: 2.86;
     }
 }
+
+// Single Product
+
+.ast-separate-container {
+    background-color: $white;
+}
+
+.single-product {
+    .content-area {
+        padding-top: 0;
+    }
+
+    // Price
+
+    .summary.entry-summary {
+        .price {
+            font-size: 40px;
+            font-weight: 300;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+    }
+
+    // Form cart
+
+    form.cart {
+        margin-top: 20px;
+    }
+
+    // Tabs
+
+    .woocommerce-tabs.wc-tabs-wrapper {
+        margin-top: 30px;
+        display: none !important;
+        @media screen and (min-width: 768px) {
+            display: block !important;
+        }
+    }
+
+    div.product .woocommerce-tabs ul.tabs li.active a {
+        color: #52493b;
+    }
+
+    // Related Products
+
+    .related.products {
+        h2 {
+            color: #52493b;
+            text-transform: initial;
+            font-weight: bold;
+        }
+        .products {
+            &.columns-4 {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                grid-gap: 24px;
+                &::before {
+                    display: none;
+                }
+
+                .ourproducts__item--informationRight,
+                .ourproducts__item--informationLeft {
+                    a {
+                        color: #52493b;
+                        text-decoration: none;
+                    }
+                }
+
+                .ourproducts__item--informationLeft {
+                    span {
+                        color: #52493b;
+                        .woocommerce-Price-currencySymbol,
+                        &.woocommerce-Price-amount {
+                            color: $primaryColor;
+                        }
+                    }
+                }
+
+                .ourproducts__item--informationRight {
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+
+// Fix padding single product
+
+@media screen and (min-width: 1201px) {
+    .ast-separate-container .ast-woocommerce-container {
+        padding: 0;
+    }
+}
+
+// Fix flag oferta
+
+.woocommerce span.onsale,
+span.onsale {
+    background-color: #52493b;
+}
+
+// Fix button lista de deseos y valoracion formulario
+
+.added_to_cart.wc-forward,
+.woocommerce .star-rating,
+.woocommerce .comment-form-rating .stars a,
+.woocommerce .star-rating::before,
+.yith-wcwl-add-button span {
+    color: #52493b;
+}
+
+// Fix button
+
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce .woocommerce-message a.button,
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt,
+.woocommerce input.button,
+.woocommerce input.button:disabled,
+.woocommerce input.button:disabled[disabled],
+.woocommerce input.button:disabled:hover,
+.woocommerce input.button:disabled[disabled]:hover,
+.woocommerce #respond input#submit,
+.woocommerce button.button.alt.disabled,
+.wc-block-grid__products .wc-block-grid__product .wp-block-button__link,
+.wc-block-grid__product-onsale {
+    background-color: transparent;
+    border: 1px solid #71644e;
+    color: #71644e;
+    padding-top: 11px !important;
+    padding-bottom: 11px !important;
+    transition: all 0.3s ease;
+    &:hover {
+        background-color: #71644e;
+        color: $white;
+        border-color: #71644e;
+    }
+}
+
+// Cart
+
+.woocommerce-page.woocommerce-checkout form #order_review td,
+.woocommerce-page.woocommerce-checkout form #order_review th,
+.woocommerce.woocommerce-checkout form #order_review td,
+.woocommerce.woocommerce-checkout form #order_review th,
+.woocommerce form .form-row label,
+.woocommerce-cart .cart-collaterals .cart_totals .shop_table,
+.woocommerce-cart .cart-collaterals .cross-sells .shop_table,
+.cart-collaterals h2,
+.woocommerce-Address h3,
+.woocommerce-cart-form__cart-item.cart_item a,
+.woocommerce-cart-form__cart-item .woocommerce-Price-amount.amount,
+.woocommerce table.shop_table thead th,
+.woocommerce-page table.shop_table thead th {
+    color: #71644e;
+}
+
+.woocommerce-cart table.cart td.actions .coupon .input-text {
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
