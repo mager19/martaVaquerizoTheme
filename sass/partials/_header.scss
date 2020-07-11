@@ -112,14 +112,17 @@
                     position: absolute;
                     top: 32px;
                     padding: 10px;
-                    background-color: $primaryColor;
+                    background-color: $white;
                     z-index: 2;
                     li {
                         a {
                             display: block;
                             padding-bottom: 5px;
                             padding-top: 5px;
-                            color: $black;
+                            color: $gris;
+                            &:hover {
+                                color: $primaryColor;
+                            }
                         }
                         &:last-child {
                             a {
@@ -148,14 +151,16 @@
         .sub-menu {
             @media screen and (max-width: 768px) {
                 a {
-                    background-color: $black;
+                    background-color: $white;
                     font-size: 14px;
                     text-transform: initial;
                     padding-left: 30px;
                     width: 100%;
+                    color: $gris;
                     &:hover {
                         background-color: $blackMedium;
                         width: 100%;
+                        color: $white;
                     }
                 }
             }
