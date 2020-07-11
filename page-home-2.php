@@ -148,11 +148,6 @@ get_header(); ?>
                     <?php endif; ?>
                     
                     <?php wp_reset_query(); ?>
-                    
-
-
-                    
-                    
                 </div>
             </div>
         </article><!-- Nuestros Productos -->
@@ -176,7 +171,7 @@ get_footer();
     jQuery(document).ready(function(){
         jQuery('.collectionSlick').slick({
             autoplay:true,
-            adaptiveHeight: true,
+            adaptiveHeight: false,
             dots: true
         });
     });
