@@ -59,7 +59,13 @@ if ( post_password_required() ) {
 		 */
 		do_action( 'woocommerce_single_product_summary' );
 		?>
-	
+		<!-- Prueba de atributos -->
+		
+		<?php
+			$attributes = nt_product_attributes();
+			if($attributes->tallas) { ?>
+				<a href="<?php echo esc_url( get_page_link( 1204 ) ); ?>" class="btn btn--primary btn--tallas">Guía de tallas</a>
+		<?php } ?>
 	</div>
 
 	<?php

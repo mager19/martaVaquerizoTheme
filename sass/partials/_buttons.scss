@@ -19,4 +19,15 @@
         background-color: $black;
         color: $white;
     }
+    &--tallas {
+        display: inline-block;
+        text-decoration: none;
+        width: auto;
+        order: 1;
+        margin-bottom: 20px !important;
+        &:hover {
+            background-color: $secondaryColor;
+            color: $white;
+        }
+    }
 }

@@ -104,6 +104,17 @@ function woo_remove_product_tabs( $tabs ) {
 	return $tabs;
 }
 
+function nt_product_attributes() {
+	global $product;
+    if ( $product->has_attributes() ) {
+
+        $attributes = ( object ) array (
+        	'tallas' => $product->get_attribute( 'tallas' )
+        );
+    return $attributes;
+    }
+}
+
 
 
 
