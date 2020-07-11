@@ -185,3 +185,13 @@ span.onsale {
     padding-top: 14px;
     padding-bottom: 14px;
 }
+
+//UPSELL
+
+.upsells.products {
+    .ourproducts__item--informationPrice {
+        span {
+            color: #71644e;
+        }
+    }
+}
