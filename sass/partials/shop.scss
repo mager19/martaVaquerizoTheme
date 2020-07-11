@@ -192,6 +192,9 @@ span.onsale {
     .ourproducts__item--informationPrice {
         span {
             color: #71644e;
+            &.woocommerce-Price-amount.amount {
+                color: $primaryColor;
+            }
         }
     }
 }
