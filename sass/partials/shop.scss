@@ -210,3 +210,36 @@ span.onsale {
         }
     }
 }
+
+// Ordenamos la información del lado derecho en el single product
+
+.orderSummary {
+    display: flex;
+    flex-direction: column;
+    .product_title {
+        order: 0;
+    }
+    .woocommerce-product-attributes.shop_attributes {
+        order: 1;
+    }
+    .woocommerce-product-details__short-description {
+        order: 2;
+    }
+    .price {
+        order: 3;
+    }
+    form.cart {
+        order: 4;
+    }
+
+    .product_meta {
+        order: 5;
+    }
+    .yith-wcwl-add-to-wishlist {
+        order: 6;
+    }
+}
+
+.related.products {
+    margin-top: 50px;
+}

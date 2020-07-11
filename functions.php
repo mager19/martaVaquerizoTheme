@@ -76,3 +76,34 @@ function lift_registerSidebar() {
 }
 
 add_action( 'widgets_init', 'lift_registerSidebar' );
+
+
+ // Remove additional information tab
+add_filter( 'woocommerce_product_tabs', 'remove_additional_information_tab', 100, 1 );
+function remove_additional_information_tab( $tabs ) {
+    unset($tabs['additional_information']);
+
+    return $tabs;
+}
+
+// Add "additional information" after add to cart
+add_action( 'woocommerce_single_product_summary', 'additional_info_under_add_to_cart', 10 );
+function additional_info_under_add_to_cart() {
+    global $product;
+
+    if ( $product && ( $product->has_attributes() || apply_filters( 'wc_product_enable_dimensions_display', $product->has_weight() || $product->has_dimensions() ) ) ) {
+        wc_display_product_attributes( $product );
+    }
+}
+
+add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
+function woo_remove_product_tabs( $tabs ) {
+	unset( $tabs['description'] ); // Remove the description tab
+	unset( $tabs['reviews'] ); // Remove the reviews tab
+	unset( $tabs['additional_information'] ); // Remove the additional information tab
+	return $tabs;
+}
+
+
+
+
