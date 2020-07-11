@@ -197,4 +197,16 @@ span.onsale {
             }
         }
     }
+
+    .products.columns-4 {
+        display: grid;
+        gap: 15px;
+        grid-template-columns: repeat(auto-fit, minmax(290px, 300px));
+        &::before {
+            display: none;
+        }
+        .ourproducts__item {
+            max-width: 100%;
+        }
+    }
 }
