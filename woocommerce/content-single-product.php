@@ -64,7 +64,7 @@ if ( post_password_required() ) {
 		<?php
 			$attributes = nt_product_attributes();
 			if($attributes->tallas) { ?>
-				<a href="<?php echo esc_url( get_page_link( 1204 ) ); ?>" class="btn btn--primary btn--tallas">Guía de tallas</a>
+				<a href="<?php echo esc_url( get_page_link( 1204 ) ); ?>" class="btn btn--primary btn--tallas" target="_blank">Guía de tallas</a>
 		<?php } ?>
 	</div>
 
