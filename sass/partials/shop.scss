@@ -37,6 +37,7 @@
     .summary.entry-summary {
         .price {
             font-size: 40px;
+            line-height: 1.3;
             font-weight: 300;
             margin-top: 10px;
             margin-bottom: 15px;
@@ -242,4 +243,30 @@ span.onsale {
 
 .related.products {
     margin-top: 50px;
+}
+
+// Single Products
+
+.single-product {
+    .woocommerce {
+        .product {
+            form.cart {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: flex-start;
+                .product-assembly {
+                    order: 0;
+                    margin-bottom: 15px;
+                }
+                .quantity.buttons_added {
+                    order: 1;
+                }
+
+                .button.single_add_to_cart_button {
+                    order: 2;
+                }
+            }
+        }
+    }
 }
