@@ -281,3 +281,14 @@ span.onsale {
         display: none;
     }
 }
+
+// fix sidebar
+
+div.berocket_single_filter_widget div.berocket_aapf_widget-wrapper * {
+    margin-bottom: 7px;
+}
+
+.berocket_aapf_widget .berocket_label_widgets {
+    display: inline-block;
+    margin-left: 7px;
+}
