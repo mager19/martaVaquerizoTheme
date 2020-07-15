@@ -25,9 +25,19 @@
         width: 160px;
         order: 1;
         margin-bottom: 20px !important;
+
         &:hover {
             background-color: $secondaryColor;
             color: $white;
+        }
+    }
+    &--preorden {
+        width: 210px;
+        background-color: transparent;
+        border: 1px solid #52493b;
+        color: #52493b;
+        &:hover {
+            background-color: #52493b;
         }
     }
 }

@@ -273,3 +273,11 @@ span.onsale {
         }
     }
 }
+
+// Fix product simple
+
+.product-type-simple {
+    .btn--preorden {
+        display: none;
+    }
+}
