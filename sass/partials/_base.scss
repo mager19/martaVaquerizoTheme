@@ -10,6 +10,9 @@ body {
     a {
         text-decoration: underline;
         color: $fontPrimary;
+        .underline {
+            text-decoration: underline;
+        }
     }
     p {
         margin-bottom: 16px;
