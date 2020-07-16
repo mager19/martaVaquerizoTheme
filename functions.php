@@ -137,7 +137,3 @@ function change_stock_text( $text, $product ) {
 }
 add_filter( 'woocommerce_get_availability_text', 'change_stock_text', 10, 2 );
 
-
-
-
-
