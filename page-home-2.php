@@ -172,7 +172,8 @@ get_footer();
         jQuery('.collectionSlick').slick({
             autoplay:true,
             adaptiveHeight: false,
-            dots: true
+            dots: true,
+            arrows: false
         });
     });
 // Slick
