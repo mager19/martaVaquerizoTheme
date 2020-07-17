@@ -15,7 +15,7 @@
 
 get_header(); ?>
 
-<main>
+<main class="main">
     <section class="hero">
         <?php if (have_rows('imagenes_hero_home', 'option')) : ?>
             <?php while (have_rows('imagenes_hero_home', 'option')) : the_row(); ?>
@@ -59,18 +59,22 @@ get_header(); ?>
             ?>
                         <article class="collection">
                             <div class="collection__left">
-                                <img src="<?php echo $icon; ?>" alt="" srcset="">
+                                <a href="<?php echo $termino_link; ?>">
+                                    <img src="<?php echo $icon; ?>" alt="" srcset="">
+                                </a>
                             </div>
                             <div class="collection__right">
                                 <h2 class="title__section title__section--gold collection__right--title">
-                                    <?php echo $term->name; ?>
+                                    <a href="<?php echo $termino_link; ?>" class="no-underline">
+                                        <?php echo $term->name; ?>
+                                    </a>
                                 </h2>
                                 <div class="line line--gold"></div>
                                 <div class="collection__right--description">
                                     <p><?php echo $terminoDescription; ?></p>
                                 </div>
                                 <div class="collection__right--btn">
-                                    <a href="<?php echo $termino_link; ?>" class="btn btn--primary">Ver +</a>
+                                    <a href="<?php echo $termino_link; ?>" class="btn btn--primary no-underline">Ver +</a>
                                 </div>
                             </div>
                         </article><!-- Collection -->
@@ -171,9 +175,29 @@ get_footer();
     jQuery(document).ready(function(){
         jQuery('.collectionSlick').slick({
             autoplay:true,
-            adaptiveHeight: false,
             dots: true,
-            arrows: false
+            arrows: false,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        adaptiveHeight: false,
+                    },
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                         adaptiveHeight: true,
+                    },
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                         adaptiveHeight: true,
+                    },
+                },
+                
+            ],
         });
     });
 // Slick
@@ -211,9 +235,7 @@ jQuery(".ourproducts__box").slick({
                 slidesToScroll: 1,
             },
         },
-        // You can unslick at a given breakpoint now by adding:
-        // settings: "unslick"
-        // instead of a settings object
+        
     ],
 });
             

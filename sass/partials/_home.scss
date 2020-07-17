@@ -3,7 +3,7 @@
     align-items: center;
     flex-direction: column;
     margin-bottom: 20px;
-    padding-top: 100px;
+    padding-top: 40px;
     padding-left: 16px;
     padding-right: 16px;
     position: relative;
@@ -11,6 +11,7 @@
         align-items: flex-end;
         flex-direction: row;
         justify-content: center;
+        padding-top: 100px;
     }
 
     &__left {
@@ -71,12 +72,21 @@
         margin-right: 11px;
         &:last-child {
             margin-right: 0;
+            display: none;
+            @media screen and (min-width: 768px) {
+                display: block;
+            }
             img {
                 filter: grayscale(100%);
             }
         }
     }
 }
+
+.main {
+    overflow: hidden;
+}
+
 .instagram {
     background-color: $secondaryColor;
     color: $white;
@@ -102,6 +112,8 @@
         flex-direction: column;
         @media screen and (min-width: 768px) {
             flex-direction: row;
+            padding-left: 15px;
+            padding-right: 15px;
         }
     }
     &__box {
@@ -110,11 +122,12 @@
         background: #dbbe81 url("../img/backItem.png");
         background-repeat: no-repeat;
         background-position: center center;
+        background-size: cover;
         display: flex;
         font-family: $fontSecondary;
         font-size: 36px;
         font-weight: normal;
-        height: 222px;
+        height: 162px;
         justify-content: center;
         margin-right: 21px;
         text-align: center;
@@ -130,7 +143,7 @@
 
         @media screen and (min-width: 768px) {
             width: 23%;
-            height: 180px;
+            // height: 180px;
             font-size: 20px;
             margin-bottom: 0;
             &:last-child {
