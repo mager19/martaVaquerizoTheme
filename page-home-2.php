@@ -16,6 +16,18 @@
 get_header(); ?>
 
 <main class="main">
+    <section class="hero hero__mobile">
+        <?php if (have_rows('imagenes_hero_home', 'option')) : ?>
+            <?php while (have_rows('imagenes_hero_home', 'option')) : the_row(); ?>
+                <div class="hero__item">
+                    <figure>
+                        <?php $image = get_sub_field('imagen', 'option'); ?>
+                        <img src="<?php echo $image['url'];  ?>" alt="" />
+                    </figure>
+                </div>
+            <?php endwhile; ?>
+        <?php endif; ?>
+    </section>
     <section class="hero">
         <?php if (have_rows('imagenes_hero_home', 'option')) : ?>
             <?php while (have_rows('imagenes_hero_home', 'option')) : the_row(); ?>
@@ -199,47 +211,48 @@ get_footer();
                 
             ],
         });
+
+        jQuery('.hero__mobile').slick({
+            autoplay:true,
+            dots: true,
+            arrows: false,
+        });
+
+        jQuery(".ourproducts__box").slick({
+            dots: true,
+            arrows: false,
+            infinite: false,
+            autoplay:true,
+            speed: 3000,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 1366,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true,
+                        dots: true,
+                    },
+                },
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                    },
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    },
+                },
+                
+            ],
+        });
     });
-// Slick
-
-            
-jQuery(".ourproducts__box").slick({
-    dots: true,
-    arrows: false,
-    infinite: false,
-    autoplay:true,
-    speed: 3000,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    responsive: [
-        {
-            breakpoint: 1366,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: true,
-                dots: true,
-            },
-        },
-        {
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-            },
-        },
-        {
-            breakpoint: 480,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-            },
-        },
-        
-    ],
-});
-            
-
-
 
 </script>
