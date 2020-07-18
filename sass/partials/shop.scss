@@ -1,6 +1,9 @@
 .shop {
     &__box {
-        grid-template-columns: repeat(auto-fit, minmax(290px, 330px));
+        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+        @media screen and (min-width: 1024px) {
+            grid-template-columns: repeat(auto-fit, minmax(290px, 330px));
+        }
         .ourproducts__item--informationPrice span,
         .ourproducts__item--informationRight {
             color: #52493b;
@@ -14,6 +17,9 @@
         gap: 15px;
         grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
         width: 100%;
+        @media screen and (min-width: 1024px) {
+            grid-template-columns: repeat(auto-fit, minmax(290px, 330px));
+        }
         .ourproducts__item {
             max-width: 100%;
         }
@@ -86,8 +92,14 @@
         .products {
             &.columns-4 {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
                 grid-gap: 24px;
+                @media screen and (min-width: 1024px) {
+                    grid-template-columns: repeat(
+                        auto-fit,
+                        minmax(290px, 300px)
+                    );
+                }
                 &::before {
                     display: none;
                 }
@@ -213,7 +225,10 @@ span.onsale {
     .products.columns-4 {
         display: grid;
         gap: 15px;
-        grid-template-columns: repeat(auto-fit, minmax(290px, 300px));
+        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+        @media screen and (min-width: 1024px) {
+            grid-template-columns: repeat(auto-fit, minmax(290px, 300px));
+        }
         &::before {
             display: none;
         }
