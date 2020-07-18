@@ -10,6 +10,10 @@
                     <?php 
                         if(is_shop()){
                             woocommerce_page_title();
+                        }elseif(is_product_category()){
+                            foreach((get_the_terms( $post->ID, 'product_cat' )) as $category) {
+                                        echo $category->name . '</br>';
+                            }
                         }else{
                             the_title();
                         }

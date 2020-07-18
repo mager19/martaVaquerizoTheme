@@ -103,13 +103,23 @@ get_header(); ?>
             <div class="line line--gold"></div>
             <div class="container mx-auto">
                 <div class="ourproducts__box">
-                    <?php //the_field("productos_shortcode"); ?>
-
                     <?php
-                    
+                    $meta_query  = WC()->query->get_meta_query();
+                    $tax_query   = WC()->query->get_tax_query();
+                    $tax_query[] = array(
+                        'taxonomy' => 'product_visibility',
+                        'field'    => 'name',
+                        'terms'    => 'featured',
+                        'operator' => 'IN',
+                    );
                     $args = array(
-                        'posts_per_page' => 9,
-                        'post_type' => 'product',
+                        'posts_per_page'  => 9,
+                        'post_type'       => 'product',
+                        'post_status'         => 'publish',
+                        'orderby'             => $atts['orderby'],
+                        'order'               => $atts['order'],
+                        'meta_query'          => $meta_query,
+                        'tax_query'           => $tax_query,
                     );
                     
                     $query = new WP_Query( $args );
@@ -135,9 +145,7 @@ get_header(); ?>
                                         <ul>
                                             <li><a href="<?php the_permalink(); ?>"><i class="marta-search"></i></a></li>
                                             <li><?php echo do_shortcode( '[yith_wcwl_add_to_wishlist]' ); ?></li>
-                                            <li><a href="<?php the_permalink(); ?>"><i class="marta-loop2"></i></a></li>
                                             <li><a href="<?php echo $product->add_to_cart_url(); ?>"><i class="marta-cart"></i></a></li>
-                                            
                                         </ul>
                                     </div>
                                 </div>
