@@ -180,7 +180,9 @@ get_header(); ?>
     <aside class="instagram">
         <?php echo do_shortcode('[elfsight_instagram_feed id="1"]'); ?>
     </aside><!--Instagram-->
-    <aside class="cta">
+    
+    <?php $backgroundImage = get_field('background_section_cta'); ?>
+    <aside class="cta" <?php if($backgroundImage) { ?> style="background-image:url('<?php echo $backgroundImage; ?>');" <?php } ?>>
         <div class="cta__information">
             <?php the_field('cta'); ?>
         </div>
