@@ -54,17 +54,12 @@ get_header( 'shop' );
 						do_action( 'woocommerce_before_shop_loop' );
 
 						?>
-						<div class="collection__box shop__box w-full">
+						
 						<?php
-						if ( wc_get_loop_prop( 'total' ) ) {
-							while ( have_posts() ) {
-								the_post();
-								do_action( 'woocommerce_shop_loop' );
-								wc_get_template_part( 'content', 'product' ); 
-							}
-						}
+							echo do_shortcode('[ajax_load_more  woocommerce="true" container_type="div" css_classes="collection__box shop__box w-full ajaxShop" post_type="product" posts_per_page="6" button_label="Más productos"]');
+							woocommerce_product_loop_end();
 						?>
-						</div>
+						
 
 						<?php
 
@@ -92,6 +87,8 @@ get_header( 'shop' );
 			</div>
 	</div>
 </div>
+
+a
 
 <?php
 

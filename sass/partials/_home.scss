@@ -65,6 +65,7 @@
         z-index: 3;
     }
 }
+
 .hero {
     display: none;
     @media screen and (min-width: 768px) {
@@ -254,6 +255,9 @@
                 .yith-wcwl-add-to-wishlist {
                     margin-top: 0;
                     margin-right: 10px;
+                    &.exists {
+                        margin-right: 0;
+                    }
                 }
 
                 .add_to_wishlist.single_add_to_wishlist {
@@ -337,5 +341,17 @@
     .slick-dots li.slick-active button:before {
         color: $white;
         font-size: 12px;
+    }
+}
+
+.yith-wcwl-wishlistexistsbrowse {
+    color: $blackMedium;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 250px;
+    margin-right: 10px;
+    a {
+        margin-right: 0 !important;
     }
 }
