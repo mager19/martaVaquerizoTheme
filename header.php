@@ -46,14 +46,12 @@ if (!defined('ABSPATH')) {
             <div class="header__information">
                 <span><?php the_field('text_left_header', 'option'); ?></span>
             </div>
-            
-                <?php
+            <?php
                 wp_nav_menu(array('theme_location' => 'header-menu',
                                  'container' => 'nav',
                                  'container_class' => 'nav-collapse',
                                  ));
                 ?>
-            
             <div class="clearfix"></div>
         </div>
     </header>
