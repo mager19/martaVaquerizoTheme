@@ -21,3 +21,6 @@
         </div>
     </div>
 </section>
+<?php 
+    get_template_part( 'inc/content', 'breadcrumbs' );
+?>
