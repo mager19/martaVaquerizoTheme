@@ -141,7 +141,7 @@ get_header(); ?>
                                             
                                         </a>
                                     </figure>
-                                    <!-- <div class="ourproducts__item--imageShare"> 
+                                    <div class="ourproducts__item--imageShare"> 
                                         <ul>
                                             <li><a href="<?php the_permalink(); ?>"><i class="marta-search"></i></a></li>
                                             <li><?php echo do_shortcode( '[yith_wcwl_add_to_wishlist]' ); ?></li>
