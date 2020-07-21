@@ -246,12 +246,13 @@ span.onsale {
     .product_title {
         order: 0;
     }
-    .woocommerce-product-attributes.shop_attributes {
+    .woocommerce-product-details__short-description {
         order: 1;
     }
-    .woocommerce-product-details__short-description {
+    .woocommerce-product-attributes.shop_attributes {
         order: 2;
     }
+
     .price {
         order: 3;
     }
