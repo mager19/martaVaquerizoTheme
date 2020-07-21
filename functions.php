@@ -127,7 +127,8 @@ function change_stock_text( $text, $product ) {
 
         if ( $stock_quantity == 0 ) {
 			$nombreBoton = get_field('nombre_del_boton','option');
-            $text = __( "<a href='https://martavaquerizojewelry.com/encargos-especiales/' class='btn btn--primary btn--tallas btn--preorden'>".$nombreBoton."</a>", "woocommerce" );
+            $titleProduct = 'Hola como estas';
+            $text = __( "<a href='https://martavaquerizojewelry.com/encargos-especiales?nameproduct=${titleProduct}' class='btn btn--primary btn--tallas btn--preorden'>".$nombreBoton."</a>", "woocommerce" );
         }
     }
 
