@@ -122,12 +122,14 @@ function change_stock_text( $text, $product ) {
     // Managing stock enabled
     if ( $product->managing_stock() ) {
 
+        // var_dump($product);
+
         // Get stock status
         $stock_quantity = $product->get_stock_quantity();
 
         if ( $stock_quantity == 0 ) {
 			$nombreBoton = get_field('nombre_del_boton','option');
-            $titleProduct = 'Hola como estas';
+            $titleProduct = 'Anillo Sweet Mami';
             $text = __( "<a href='https://martavaquerizojewelry.com/encargos-especiales?nameproduct=${titleProduct}' class='btn btn--primary btn--tallas btn--preorden'>".$nombreBoton."</a>", "woocommerce" );
         }
     }
