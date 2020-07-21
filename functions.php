@@ -143,3 +143,11 @@ add_filter( 'woocommerce_get_image_size_gallery_thumbnail', function( $size ) {
         'crop' => 0,
     );
 } );
+
+
+
+function billingadvantage__yoasttobottom(){
+    return 'low';
+}
+
+add_filter('wpseo_metabox_prio', 'billingadvantage__yoasttobottom');
