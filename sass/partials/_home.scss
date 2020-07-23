@@ -109,11 +109,69 @@
     background-color: $secondaryColor;
     color: $white;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    flex-direction: column;
+    @media screen and (min-width: 1200px) {
+        flex-direction: row;
+    }
 
-    .instagram__item {
+    &__plugin {
+        width: 100%;
+    }
+
+    &__item {
         height: 400px;
+    }
+    &__message {
+        width: 100%;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        background-color: $black;
+        transition: all 0.3s ease-in;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        @media screen and (min-width: 1200px) {
+            flex: 0 0 300px;
+            height: 218px;
+            padding-top: 0;
+            padding-bottom: 0;
+            width: auto;
+        }
+        @media screen and (min-width: 1600px) {
+            height: 380px;
+            flex: 0 0 375px;
+        }
+        &:hover {
+            background-color: $blackMedium;
+        }
+        a {
+            text-decoration: none;
+            color: $primaryColor;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+
+            h4 {
+                font-size: 40px;
+                color: $primaryColor;
+                font-weight: 500;
+                margin-bottom: 20px;
+            }
+            i {
+                font-size: 40px;
+            }
+            span {
+                text-transform: uppercase;
+                font-weight: 700;
+                font-size: 15px;
+                display: block;
+                margin-top: 20px;
+            }
+        }
     }
 }
 

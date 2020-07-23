@@ -181,7 +181,16 @@ get_header(); ?>
 
     </section><!-- Collection and Our products -->
     <aside class="instagram">
-        <?php echo do_shortcode('[elfsight_instagram_feed id="1"]'); ?>
+        <div class="instagram__plugin">
+            <?php echo do_shortcode('[elfsight_instagram_feed id="1"]'); ?>
+        </div>
+        <div class="instagram__message">
+            <a href="https://www.instagram.com/martavaquerizooficial/" target="_blank">
+                <h4>Sigueme en:</h4>
+                <i class="marta-instagram"></i>
+                <span>#martavaquerizo</span>
+            </a>
+        </div>
     </aside>
     <!--Instagram-->
 
