@@ -55,51 +55,54 @@ get_header(); ?>
     <section class="ourproducts">
         <div class="container mx-auto collectionSlick">
             <?php
-                $terms = get_terms([
-                    'taxonomy' => 'coleccion',
-                    'hide_empty' => false,
-                ]);
-                
-                if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
-                    
-                    foreach ( $terms as $term ) {
+            $terms = get_terms([
+                'taxonomy' => 'coleccion',
+                'hide_empty' => false,
+            ]);
 
-                        $termino = get_term( $term->term_id, 'coleccion' );
-                        $termino_link = get_term_link( $termino );
-                        $icon = get_field('imagen_coleccion', $term->taxonomy . '_' . $term->term_id);
-                        $terminoDescription = get_field('informacion_coleccion', $term->taxonomy . '_' . $term->term_id); 
+            if (!empty($terms) && !is_wp_error($terms))
+            {
+
+                foreach ($terms as $term)
+                {
+
+                    $termino = get_term($term->term_id, 'coleccion');
+                    $termino_link = get_term_link($termino);
+                    $icon = get_field('imagen_coleccion', $term->taxonomy . '_' . $term->term_id);
+                    $terminoDescription = get_field('informacion_coleccion', $term->taxonomy . '_' . $term->term_id);
             ?>
-                        <article class="collection">
-                            <div class="collection__left">
-                                <a href="<?php echo $termino_link; ?>">
-                                    <img src="<?php echo $icon; ?>" alt="" srcset="">
+                    <article class="collection">
+                        <div class="collection__left">
+                            <a href="<?php echo $termino_link; ?>">
+                                <img src="<?php echo $icon; ?>" alt="" srcset="">
+                            </a>
+                        </div>
+                        <div class="collection__right">
+                            <h2 class="title__section title__section--gold collection__right--title">
+                                <a href="<?php echo $termino_link; ?>" class="no-underline">
+                                    <?php echo $term->name; ?>
                                 </a>
+                            </h2>
+                            <div class="line line--gold"></div>
+                            <div class="collection__right--description">
+                                <p><?php echo $terminoDescription; ?></p>
                             </div>
-                            <div class="collection__right">
-                                <h2 class="title__section title__section--gold collection__right--title">
-                                    <a href="<?php echo $termino_link; ?>" class="no-underline">
-                                        <?php echo $term->name; ?>
-                                    </a>
-                                </h2>
-                                <div class="line line--gold"></div>
-                                <div class="collection__right--description">
-                                    <p><?php echo $terminoDescription; ?></p>
-                                </div>
-                                <div class="collection__right--btn">
-                                    <a href="<?php echo $termino_link; ?>" class="btn btn--primary no-underline">Ver +</a>
-                                </div>
+                            <div class="collection__right--btn">
+                                <a href="<?php echo $termino_link; ?>" class="btn btn--primary no-underline">Ver +</a>
                             </div>
-                        </article><!-- Collection -->
+                        </div>
+                    </article><!-- Collection -->
             <?php
-                    }
-                    
                 }
-        ?>
-            
+            }
+            ?>
+
         </div><!-- Collection Section -->
-        
+
         <article class="ourproducts__margin">
-            <h2 class="title__section title__section--gold">Nuestros Productos</h2>
+            <?php if (get_field('titulo_producto')) : ?>
+                <h2 class="title__section title__section--gold"><?php echo get_field('titulo_producto'); ?></h2>
+            <?php endif; ?>
             <div class="line line--gold"></div>
             <div class="container mx-auto">
                 <div class="ourproducts__box">
@@ -121,30 +124,30 @@ get_header(); ?>
                         'meta_query'          => $meta_query,
                         'tax_query'           => $tax_query,
                     );
-                    
-                    $query = new WP_Query( $args );
-                    
+
+                    $query = new WP_Query($args);
+
                     ?>
-                    
-                    <?php if( $query->have_posts() ) : ?>
-                        
-                        <?php while ( $query->have_posts() ) : $query->the_post(); 
-                              global $product;
-                              $product = get_product( get_the_ID() ); ?>
+
+                    <?php if ($query->have_posts()) : ?>
+
+                        <?php while ($query->have_posts()) : $query->the_post();
+                            global $product;
+                            $product = get_product(get_the_ID()); ?>
                             <div class="ourproducts__item">
                                 <div class="ourproducts__item--image">
                                     <figure>
-                                        <a href="<?php the_permalink( ); ?>">
-                                            <?php 
-                                                the_post_thumbnail( 'full' );
+                                        <a href="<?php the_permalink(); ?>">
+                                            <?php
+                                            the_post_thumbnail('full');
                                             ?>
-                                            
+
                                         </a>
                                     </figure>
-                                    <div class="ourproducts__item--imageShare"> 
+                                    <div class="ourproducts__item--imageShare">
                                         <ul>
                                             <li><a href="<?php the_permalink(); ?>"><i class="marta-search"></i></a></li>
-                                            <li><?php echo do_shortcode( '[yith_wcwl_add_to_wishlist]' ); ?></li>
+                                            <li><?php echo do_shortcode('[yith_wcwl_add_to_wishlist]'); ?></li>
                                             <li><a href="<?php echo $product->add_to_cart_url(); ?>"><i class="marta-cart"></i></a></li>
                                         </ul>
                                     </div>
@@ -152,41 +155,44 @@ get_header(); ?>
                                 <div class="ourproducts__item--information">
                                     <div class="ourproducts__item--informationLeft">
                                         <h3 class="title--product">
-                                            <a href="<?php the_permalink( ); ?>"><?php the_title(); ?></a>
+                                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                         </h3>
                                         <div class="ourproducts__item--informationPrice">
                                             <span>Precio:</span>
-                                            <?php $price = get_post_meta( get_the_ID(), '_price', true ); ?>
-                                            <?php echo wc_price( $price ); ?>
-                                            
+                                            <?php $price = get_post_meta(get_the_ID(), '_price', true); ?>
+                                            <?php echo wc_price($price); ?>
+
                                         </div>
                                     </div>
                                     <div class="ourproducts__item--informationRight">
-                                        <?php echo wc_get_product_category_list($product->get_id()) ?> 
-                                        
+                                        <?php echo wc_get_product_category_list($product->get_id()) ?>
+
                                     </div>
                                 </div>
                             </div>
                         <?php endwhile; ?>
-                        
+
                     <?php endif; ?>
-                    
+
                     <?php wp_reset_query(); ?>
                 </div>
             </div>
         </article><!-- Nuestros Productos -->
-        
+
     </section><!-- Collection and Our products -->
     <aside class="instagram">
         <?php echo do_shortcode('[elfsight_instagram_feed id="1"]'); ?>
-    </aside><!--Instagram-->
-    
+    </aside>
+    <!--Instagram-->
+
     <?php $backgroundImage = get_field('background_section_cta'); ?>
-    <aside class="cta" <?php if($backgroundImage) { ?> style="background-image:url('<?php echo $backgroundImage; ?>');" <?php } ?>>
+    <aside class="cta" <?php if ($backgroundImage)
+                        { ?> style="background-image:url('<?php echo $backgroundImage; ?>');" <?php } ?>>
         <div class="cta__information">
             <?php the_field('cta'); ?>
         </div>
-    </aside><!--CTA-->
+    </aside>
+    <!--CTA-->
 </main>
 
 <?php
@@ -194,13 +200,12 @@ get_footer();
 ?>
 
 <script>
-    jQuery(document).ready(function(){
+    jQuery(document).ready(function() {
         jQuery('.collectionSlick').slick({
-            autoplay:true,
+            autoplay: true,
             dots: true,
             arrows: false,
-            responsive: [
-                {
+            responsive: [{
                     breakpoint: 1024,
                     settings: {
                         adaptiveHeight: false,
@@ -209,21 +214,21 @@ get_footer();
                 {
                     breakpoint: 768,
                     settings: {
-                         adaptiveHeight: true,
+                        adaptiveHeight: true,
                     },
                 },
                 {
                     breakpoint: 480,
                     settings: {
-                         adaptiveHeight: true,
+                        adaptiveHeight: true,
                     },
                 },
-                
+
             ],
         });
 
         jQuery('.hero__mobile').slick({
-            autoplay:true,
+            autoplay: true,
             dots: true,
             arrows: false,
         });
@@ -232,12 +237,11 @@ get_footer();
             dots: true,
             arrows: false,
             infinite: false,
-            autoplay:true,
+            autoplay: true,
             speed: 3000,
             slidesToShow: 3,
             slidesToScroll: 1,
-            responsive: [
-                {
+            responsive: [{
                     breakpoint: 1366,
                     settings: {
                         slidesToShow: 3,
@@ -260,9 +264,8 @@ get_footer();
                         slidesToScroll: 1,
                     },
                 },
-                
+
             ],
         });
     });
-
 </script>
