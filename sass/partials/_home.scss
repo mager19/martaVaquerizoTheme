@@ -146,9 +146,9 @@
         background-size: cover;
         display: flex;
         font-family: $fontSecondary;
-        font-size: 36px;
+        font-size: 20px;
         font-weight: normal;
-        height: 162px;
+        height: 150px;
         justify-content: center;
         margin-right: 21px;
         text-align: center;
@@ -158,22 +158,23 @@
         margin-left: auto;
         margin-right: auto;
         transition: opacity 0.3s ease-in;
+        text-decoration: none;
+        padding: 20px;
+        font-weight: 500;
         &:hover {
             opacity: 0.5;
         }
 
         @media screen and (min-width: 768px) {
-            width: 23%;
-            // height: 180px;
-            font-size: 20px;
+            width: 18%;
+            font-size: 16px;
             margin-bottom: 0;
             &:last-child {
                 margin-right: 0;
             }
         }
         @media screen and (min-width: 1200px) {
-            font-size: 36px;
-            height: 222px;
+            font-size: 21px;
         }
     }
 }
