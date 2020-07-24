@@ -414,3 +414,32 @@
         margin-right: 0 !important;
     }
 }
+
+.dotCollection {
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-bottom-color: #cec6b5;
+    position: relative;
+    top: -10px;
+
+    &:after {
+        content: "";
+        position: absolute;
+        left: -10px;
+        top: 27px;
+        width: 0;
+        height: 0;
+        border: 10px solid transparent;
+        border-top-color: #cec6b5;
+    }
+}
+
+.slick-active {
+    .dotCollection {
+        border-bottom-color: $primaryColor;
+        &:after {
+            border-top-color: $primaryColor;
+        }
+    }
+}

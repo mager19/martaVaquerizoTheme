@@ -213,6 +213,10 @@ get_footer();
         jQuery('.collectionSlick').slick({
             autoplay: true,
             dots: true,
+            customPaging: function(slider, i) {
+                // this example would render "tabs" with titles
+                return '<span class="dotCollection"></span>';
+            },
             arrows: false,
             responsive: [{
                     breakpoint: 1024,
