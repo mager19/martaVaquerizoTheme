@@ -244,10 +244,18 @@ get_footer();
             autoplay: true,
             dots: true,
             arrows: false,
+            customPaging: function(slider, i) {
+                // this example would render "tabs" with titles
+                return '<span class="dotCollection"></span>';
+            },
         });
 
         jQuery(".ourproducts__box").slick({
             dots: true,
+            customPaging: function(slider, i) {
+                // this example would render "tabs" with titles
+                return '<span class="dotCollection"></span>';
+            },
             arrows: false,
             infinite: false,
             autoplay: true,
