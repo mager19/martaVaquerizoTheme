@@ -11,31 +11,31 @@
                  <?php the_field("footer_left", 'option') ?>
                  <div class="socialnetworks">
                      <ul class="socialnetworks__item">
-                        <?php if ( have_rows('social_icons','option') ) : ?>
-                            
-                            <?php while( have_rows('social_icons','option') ) : the_row(); ?>
-                                <li>
-                                    <a href="<?php the_sub_field('social_profile','option'); ?>">
-                                        <i class="marta-<?php the_sub_field('social_icon','option'); ?>"></i>
-                                    </a>
-                                </li>
-                        
-                            <?php endwhile; ?>
-                        
-                        <?php endif; ?>
-                        
-                    </ul>
+                         <?php if (have_rows('social_icons', 'option')) : ?>
+
+                             <?php while (have_rows('social_icons', 'option')) : the_row(); ?>
+                                 <li>
+                                     <a href="<?php the_sub_field('social_profile', 'option'); ?>">
+                                         <i class="marta-<?php the_sub_field('social_icon', 'option'); ?>"></i>
+                                     </a>
+                                 </li>
+
+                             <?php endwhile; ?>
+
+                         <?php endif; ?>
+
+                     </ul>
                      <div class="socialnetworks--hashtag">
                          <strong><?php the_field("hashtag", 'option'); ?></strong>
                      </div>
                  </div>
              </div>
              <!-- Footer One-->
-             <div class="footer__col footer__col--two md:w-3/12 lg:w-2/12 xl:ml-auto">
+             <div class="footer__col footer__col--two md:w-3/12 lg:w-2/12 xl:ml-8">
                  <?php the_field("footer_column_1", "option"); ?>
              </div>
              <!-- Footer Two-->
-             <div class="footer__col footer__col--three md:w-3/12 lg:w-2/12">
+             <div class="footer__col footer__col--three md:w-3/12 xl:ml-8">
                  <?php the_field("footer_column_2", "option"); ?>
              </div>
              <!-- Footer Three-->
