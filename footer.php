@@ -9,6 +9,18 @@
          <div class="footer__top">
              <div class="footer__col footer__col--one md:w-3/12">
                  <?php the_field("footer_left", 'option') ?>
+             </div>
+             <!-- Footer One-->
+             <div class="footer__col footer__col--two md:w-3/12 lg:w-2/12 xl:ml-8">
+                 <?php the_field("footer_column_1", "option"); ?>
+             </div>
+             <!-- Footer Two-->
+             <div class="footer__col footer__col--three md:w-3/12 xl:ml-8">
+                 <?php the_field("footer_column_2", "option"); ?>
+             </div>
+             <!-- Footer Three-->
+             <div class="footer__col footer__col--four md:w-3/12 lg:w-2/12">
+                 <?php the_field("footer_column_3", "option"); ?>
                  <div class="socialnetworks">
                      <ul class="socialnetworks__item">
                          <?php if (have_rows('social_icons', 'option')) : ?>
@@ -30,21 +42,10 @@
                      </div>
                  </div>
              </div>
-             <!-- Footer One-->
-             <div class="footer__col footer__col--two md:w-3/12 lg:w-2/12 xl:ml-8">
-                 <?php the_field("footer_column_1", "option"); ?>
-             </div>
-             <!-- Footer Two-->
-             <div class="footer__col footer__col--three md:w-3/12 xl:ml-8">
-                 <?php the_field("footer_column_2", "option"); ?>
-             </div>
-             <!-- Footer Three-->
-             <div class="footer__col footer__col--four md:w-3/12 lg:w-2/12">
-                 <?php the_field("footer_column_3", "option"); ?>
-             </div>
              <!-- Footer Four-->
              <div class="footer__col footer__col--five md:w-3/12 xl:w-2/12 md:hidden lg:block">
                  <?php the_field("footer_column_4", "option"); ?>
+
              </div>
              <!-- Footer Five-->
          </div>
