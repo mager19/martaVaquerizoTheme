@@ -152,21 +152,14 @@ get_header(); ?>
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="ourproducts__item--information">
+                                <div class="ourproducts__item--information items-center">
                                     <div class="ourproducts__item--informationLeft">
                                         <h3 class="title--product">
                                             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                         </h3>
-                                        <div class="ourproducts__item--informationPrice">
-                                            <span>Precio:</span>
-                                            <?php $price = get_post_meta(get_the_ID(), '_price', true); ?>
-                                            <?php echo wc_price($price); ?>
-
-                                        </div>
                                     </div>
                                     <div class="ourproducts__item--informationRight">
                                         <?php echo wc_get_product_category_list($product->get_id()) ?>
-
                                     </div>
                                 </div>
                             </div>
