@@ -421,13 +421,13 @@
     border: 10px solid transparent;
     border-bottom-color: #cec6b5;
     position: relative;
-    top: -10px;
+    top: 0px;
 
     &:after {
         content: "";
         position: absolute;
         left: -10px;
-        top: 27px;
+        top: 32px;
         width: 0;
         height: 0;
         border: 10px solid transparent;
