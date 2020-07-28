@@ -257,8 +257,8 @@ span.onsale {
         td,
         th,
         tr {
-            width: 100%;
-            display: block;
+            width: auto;
+            display: inline-flex;
             background-color: $white !important;
             border: 0;
             padding-left: 0;
@@ -271,6 +271,12 @@ span.onsale {
         }
         td {
             font-style: normal;
+        }
+    }
+
+    .woocommerce-product-attributes-item__label {
+        &:before {
+            content: " : ";
         }
     }
 
