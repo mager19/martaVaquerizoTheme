@@ -297,6 +297,10 @@ span.onsale {
     .yith-wcwl-add-to-wishlist {
         order: 6;
     }
+    .addtoany_list {
+        order: 7;
+        margin-top: 20px;
+    }
 }
 
 .related.products {
@@ -329,6 +333,12 @@ span.onsale {
                 padding-bottom: 20px !important;
             }
         }
+    }
+}
+
+.woocommerce-product-details__short-description {
+    .addtoany_share_save_container.addtoany_content.addtoany_content_bottom {
+        display: none;
     }
 }
 
