@@ -39,13 +39,13 @@
     .ourproducts__item--informationRight,
     .title--product {
         a {
-            color: #71644f;
+            color: $black;
         }
     }
 
     .ourproducts__item--informationLeft {
         span {
-            color: #71644e;
+            color: $blackMedium;
             &.woocommerce-Price-amount.amount {
                 color: $primaryColor;
             }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying product content within loops
  *
@@ -15,12 +16,13 @@
  * @version 3.6.0
  */
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 global $product;
 
 // Ensure visibility.
-if ( empty( $product ) || ! $product->is_visible() ) {
+if (empty($product) || !$product->is_visible())
+{
 	return;
 }
 ?>
@@ -29,17 +31,17 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 <div class="ourproducts__item">
 	<div class="ourproducts__item--image">
 		<figure>
-			<a href="<?php the_permalink( ); ?>">
-				<?php 
-					the_post_thumbnail( 'full' );
+			<a href="<?php the_permalink(); ?>">
+				<?php
+				the_post_thumbnail('full');
 				?>
-				
+
 			</a>
 		</figure>
 		<div class="ourproducts__item--imageShare">
 			<ul>
 				<li><a href="<?php the_permalink(); ?>"><i class="marta-search"></i></a></li>
-				<li><?php echo do_shortcode( '[yith_wcwl_add_to_wishlist]' ); ?></li>
+				<li><?php echo do_shortcode('[yith_wcwl_add_to_wishlist]'); ?></li>
 				<li><a href="<?php echo $product->add_to_cart_url(); ?>"><i class="marta-cart"></i></a></li>
 			</ul>
 		</div>
@@ -47,21 +49,15 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	<div class="ourproducts__item--information">
 		<div class="ourproducts__item--informationLeft">
 			<h3 class="title--product">
-				<a href="<?php the_permalink( ); ?>"><?php the_title(); ?></a>
+				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 			</h3>
 			<div class="ourproducts__item--informationPrice">
 				<span>Precio:</span>
-				<?php $price = get_post_meta( get_the_ID(), '_price', true ); ?>
-				<?php echo wc_price( $price ); ?>
-				
+				<?php $price = get_post_meta(get_the_ID(), '_price', true); ?>
+				<?php echo wc_price($price); ?>
+
 			</div>
 		</div>
-		<div class="ourproducts__item--informationRight">
-			<?php echo wc_get_product_category_list($product->get_id()) ?> 
-			
-		</div>
+
 	</div>
 </div>
-
-
-

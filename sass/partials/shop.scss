@@ -6,7 +6,7 @@
         }
         .ourproducts__item--informationPrice span,
         .ourproducts__item--informationRight {
-            color: #52493b;
+            color: $black;
         }
     }
 }
@@ -28,7 +28,7 @@
 
 .widget-title {
     span {
-        color: #52493b;
+        color: $black;
         font-family: $fontSecondary;
         font-size: 14px;
         font-weight: bold;
@@ -79,14 +79,14 @@
     }
 
     div.product .woocommerce-tabs ul.tabs li.active a {
-        color: #52493b;
+        color: $black;
     }
 
     // Related Products
 
     .related.products {
         h2 {
-            color: #52493b;
+            color: $black;
             text-transform: initial;
             font-weight: bold;
         }
@@ -108,14 +108,14 @@
                 .ourproducts__item--informationRight,
                 .ourproducts__item--informationLeft {
                     a {
-                        color: #52493b;
+                        color: $black;
                         text-decoration: none;
                     }
                 }
 
                 .ourproducts__item--informationLeft {
                     span {
-                        color: #52493b;
+                        color: $black;
                         .woocommerce-Price-currencySymbol,
                         &.woocommerce-Price-amount {
                             color: $primaryColor;
@@ -153,7 +153,7 @@ span.onsale {
 .woocommerce .comment-form-rating .stars a,
 .woocommerce .star-rating::before,
 .yith-wcwl-add-button span {
-    color: #52493b;
+    color: $black;
 }
 
 // Fix button
@@ -177,14 +177,14 @@ span.onsale {
 .wc-block-grid__product-onsale {
     background-color: transparent;
     border: 1px solid #71644e !important;
-    color: #71644e;
+    color: $black;
     padding-top: 11px !important;
     padding-bottom: 11px !important;
     transition: all 0.3s ease;
     &:hover {
-        background-color: #71644e;
+        background-color: $black;
         color: $white;
-        border-color: #71644e;
+        border-color: $black;
     }
 }
 
@@ -203,7 +203,7 @@ span.onsale {
 .woocommerce-cart-form__cart-item .woocommerce-Price-amount.amount,
 .woocommerce table.shop_table thead th,
 .woocommerce-page table.shop_table thead th {
-    color: #71644e;
+    color: $black;
 }
 
 .woocommerce-cart table.cart td.actions .coupon .input-text {
@@ -216,7 +216,7 @@ span.onsale {
 .upsells.products {
     .ourproducts__item--informationPrice {
         span {
-            color: #71644e;
+            color: $black;
             &.woocommerce-Price-amount.amount {
                 color: $primaryColor;
             }
@@ -264,7 +264,7 @@ span.onsale {
             padding-left: 0;
         }
         th {
-            color: #71644e;
+            color: $black;
             font-weight: 700;
             font-size: 1.3rem;
             text-transform: capitalize;
@@ -305,7 +305,7 @@ span.onsale {
             .product-assembly {
                 order: 0;
                 margin-bottom: 15px;
-                color: #52493b;
+                color: $black;
                 border-bottom: 1px solid #52493b;
             }
             .quantity.buttons_added {

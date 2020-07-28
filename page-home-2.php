@@ -158,9 +158,7 @@ get_header(); ?>
                                             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                         </h3>
                                     </div>
-                                    <div class="ourproducts__item--informationRight">
-                                        <?php echo wc_get_product_category_list($product->get_id()) ?>
-                                    </div>
+
                                 </div>
                             </div>
                         <?php endwhile; ?>
