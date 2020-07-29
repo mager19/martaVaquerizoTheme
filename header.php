@@ -11,7 +11,8 @@
  * @since 1.0.0
  */
 
-if (!defined('ABSPATH')) {
+if (!defined('ABSPATH'))
+{
     exit; // Exit if accessed directly.
 }
 
@@ -42,16 +43,22 @@ if (!defined('ABSPATH')) {
                 <div class="iconCart">
                     <?php echo do_shortcode("[astra_woo_mini_cart] "); ?>
                 </div>
+                <div class="loginHeader">
+                    <a href="<?php echo esc_url(wp_login_url(get_permalink())); ?>" title="Iniciar sesión">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon-user.svg">
+                    </a>
+                </div>
             </div>
             <div class="header__information">
                 <span><?php the_field('text_left_header', 'option'); ?></span>
             </div>
             <?php
-                wp_nav_menu(array('theme_location' => 'header-menu',
-                                 'container' => 'nav',
-                                 'container_class' => 'nav-collapse',
-                                 ));
-                ?>
+            wp_nav_menu(array(
+                'theme_location' => 'header-menu',
+                'container' => 'nav',
+                'container_class' => 'nav-collapse',
+            ));
+            ?>
             <div class="clearfix"></div>
         </div>
     </header>

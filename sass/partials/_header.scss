@@ -14,15 +14,26 @@
     }
 
     .logo {
-        max-width: 182px;
+        max-width: 140px;
         margin-right: auto;
-        margin-left: auto;
+        margin-left: 70px;
+        @media screen and (min-width: 414px) {
+            margin-left: auto;
+        }
+        @media screen and (min-width: 768px) {
+            max-width: 182px;
+        }
     }
 
     .iconCart {
         position: absolute;
-        right: 15px;
-        bottom: 0;
+        right: 56px;
+        top: 3px;
+        @media screen and (min-width: 768px) {
+            right: 70px;
+            bottom: 0;
+            top: auto;
+        }
         span {
             color: $primaryColor;
         }
@@ -350,5 +361,17 @@
 @media screen and (min-width: 768px) {
     .js .nav-collapse {
         overflow: visible !important;
+    }
+}
+
+.loginHeader {
+    position: absolute;
+    top: 21px;
+    right: 15px;
+    width: 24px;
+    height: 24px;
+
+    @media screen and (min-width: 768px) {
+        right: 15px;
     }
 }
