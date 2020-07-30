@@ -88,6 +88,49 @@ if (post_password_required())
 	 */
 	do_action('woocommerce_after_single_product_summary');
 	?>
+	<!-- Productos Relacionados -->
+	<?php if ($products = get_field('productos_relacionados')) : ?>
+		<?php global $product; ?>
+		<section class="related products">
+			<h2>Productos relacionados</h2>
+			<div class="products columns-4">
+				<?php foreach ($products as $p) : ?>
+					<div class="ourproducts__item">
+						<div class="ourproducts__item--image">
+							<figure>
+								<a href="<?php the_permalink($p->ID); ?>" title="<?php the_title_attribute(array('post' => $p->ID)); ?>">
+									<?php echo get_the_post_thumbnail($p->ID, 'full'); ?>
+								</a>
+							</figure>
+							<div class="ourproducts__item--imageShare">
+								<ul>
+									<li><a href="<?php the_permalink($p->ID); ?>">
+											<i class="marta-search"></i></a></li>
+									<li><?php echo do_shortcode('[yith_wcwl_add_to_wishlist]'); ?></li>
+									<li><a href="<?php the_permalink($p->ID); ?>"><i class="marta-cart"></i></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="ourproducts__item--information">
+							<div class="ourproducts__item--informationLeft">
+								<h3 class="title--product">
+									<a href="<?php the_permalink($p->ID); ?>">
+										<?php echo get_the_title($p->ID); ?>
+									</a>
+								</h3>
+								<div class="ourproducts__item--informationPrice">
+									<span>Precio:</span>
+									<?php $price = get_post_meta($p->ID, '_price', true); ?>
+									<?php echo wc_price($price); ?>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				<?php endforeach; ?>
+			</div>
+		</section>
+	<?php endif; ?>
 </div>
 
 <?php do_action('woocommerce_after_single_product'); ?>
