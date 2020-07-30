@@ -403,3 +403,27 @@ div.berocket_single_filter_widget div.berocket_aapf_widget-wrapper * {
 .ywgc-predefined-amount-button.selected_button {
     background-color: $primaryColor;
 }
+
+// Fix title yith accordeon
+
+.ywcca_widget_title {
+    color: #000;
+    font-family: "Prata", serif;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.86;
+}
+
+.ywcca_category_accordion_widget {
+    padding-left: 0;
+    .cat-item {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        a {
+            text-decoration: none;
+            text-transform: initial;
+        }
+    }
+}
