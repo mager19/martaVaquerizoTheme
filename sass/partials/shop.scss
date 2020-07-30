@@ -407,8 +407,8 @@ div.berocket_single_filter_widget div.berocket_aapf_widget-wrapper * {
 // Fix title yith accordeon
 
 .ywcca_widget_title {
-    color: #000;
-    font-family: "Prata", serif;
+    color: $black;
+    font-family: $fontSecondary;
     font-size: 14px;
     font-weight: bold;
     font-stretch: normal;
@@ -426,4 +426,8 @@ div.berocket_single_filter_widget div.berocket_aapf_widget-wrapper * {
             text-transform: initial;
         }
     }
+}
+
+.widget_yith_wc_category_accordion ul.ywcca_category_accordion_widget > li {
+    border-color: rgba($primaryColor, 0.4);
 }
