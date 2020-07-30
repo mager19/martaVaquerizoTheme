@@ -75,7 +75,16 @@ if (post_password_required())
 					Cuidado de joyas
 				</a>
 			</div>
+			<?php if (has_term('anillos', 'product_cat'))
+			{ ?>
+				<div class="buttonTallas">
+					<a href="<?php echo esc_url(get_page_link(1088)); ?>" class="btn btn--primary btn--tallas mr-0" target="_blank">
+						¿No encuentras tu taya?
+					</a>
+				</div>
+			<?php } ?>
 		<?php } ?>
+
 	</div>
 
 	<?php
