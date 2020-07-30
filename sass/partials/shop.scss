@@ -417,10 +417,10 @@ div.berocket_single_filter_widget div.berocket_aapf_widget-wrapper * {
 }
 
 .ywcca_category_accordion_widget {
-    padding-left: 0;
+    padding-left: 0 !important;
     .cat-item {
-        padding-top: 5px;
-        padding-bottom: 5px;
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
         a {
             text-decoration: none;
             text-transform: initial;
