@@ -75,16 +75,23 @@ if (post_password_required())
 					Cuidado de joyas
 				</a>
 			</div>
-			<?php if (has_term('anillos', 'product_cat'))
-			{ ?>
-				<div class="buttonTallas">
-					<a href="<?php echo esc_url(get_page_link(1088)); ?>" class="btn btn--primary btn--tallas mr-0" target="_blank">
-						¿No encuentras tu taya?
-					</a>
-				</div>
-			<?php } ?>
 		<?php } ?>
-
+		<?php if (has_term('anillos', 'product_cat'))
+		{ ?>
+			<div class="buttonTallas">
+				<a href="<?php echo esc_url(get_page_link(1204)); ?>" class="btn btn--primary btn--tallas" target="_blank">
+					Guía de tallas
+				</a>
+				<a href="<?php echo esc_url(get_page_link(1131)); ?>" class="btn btn--primary btn--tallas" target="_blank">
+					Cuidado de joyas
+				</a>
+			</div>
+			<div class="buttonTallas">
+				<a href="<?php echo esc_url(get_page_link(1088)); ?>" class="btn btn--primary btn--tallas" target="_blank">
+					¿No encuentras tu taya?
+				</a>
+			</div>
+		<?php } ?>
 	</div>
 
 	<?php
