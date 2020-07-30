@@ -371,8 +371,29 @@ div.berocket_single_filter_widget div.berocket_aapf_widget-wrapper * {
     display: none;
 }
 
+.ywgc_select_amount_title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.ywgc-sender-info-title {
+    margin-top: 20px;
+}
+
 .gift-this-product-main-container {
     margin-top: 10px;
+}
+
+.gift-card-content-editor.step-content textarea,
+.gift-card-content-editor.step-content input {
+    width: 56%;
+}
+
+.gift-card-content-editor.step-content h5 {
+    margin-top: 20px;
+    text-transform: lowercase;
+    font-size: 20px;
+    margin-bottom: 20px;
 }
 
 .gift-cards-list button {
