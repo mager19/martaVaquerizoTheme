@@ -55,4 +55,35 @@
     .woocommerce-Price-currencySymbol {
         color: $primaryColor !important;
     }
+
+    &__sidebar {
+        &--box {
+            margin-bottom: 15px;
+            .titlesidebar {
+                color: #000;
+                font-family: "Prata", serif;
+                font-size: 14px;
+                font-weight: bold;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 2.86;
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+        &--list {
+            padding-left: 0;
+            li {
+                padding-top: 5px !important;
+                padding-bottom: 5px !important;
+                border-bottom: 1px solid;
+            }
+        }
+        &--link {
+            text-decoration: none;
+            font-size: 16px;
+            color: $black;
+        }
+    }
 }

@@ -56,8 +56,9 @@ get_header(); ?>
         <div class="container mx-auto collectionSlick">
             <?php
             $terms = get_terms([
-                'taxonomy' => 'coleccion',
+                'taxonomy'   => 'coleccion',
                 'hide_empty' => false,
+                'parent'     => 0
             ]);
 
             if (!empty($terms) && !is_wp_error($terms))

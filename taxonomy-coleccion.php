@@ -16,6 +16,7 @@
 get_header(); ?>
 
 <main class="bg-white">
+
     <?php
     $id = get_queried_object()->term_id;;
     $taxonomy = 'coleccion';
@@ -37,72 +38,128 @@ get_header(); ?>
             </div>
         </div>
     </section><!-- Hero Image -->
-    <section class="collection container md:mx-auto">
-        <article class="collection__margin">
+    <div class="container mx-auto content-area">
+        <div class="flex flex-wrap">
+            <div class="w-full md:w-2/12 px-4 bg-gray">
 
-            <h2 class="collection__title"><?php echo $name; ?></h2>
-            <div class="line line--gold"></div>
-            <div class="collection__information">
-                <?php $terminoDescription = get_field('informacion_coleccion', $taxonomy . '_' . $id); ?>
-                <?php echo $terminoDescription; ?>
-            </div>
-            <div class="container mx-auto">
-                <div class="collection__box">
-
+                <div class="sidebar__collection footer--topCol">
                     <?php
-                    $args = array(
-                        'posts_per_page' => 9,
-                        'post_type' => 'product',
+                    $taxonomies = get_terms(array(
                         'taxonomy' => 'coleccion',
-                        'term' => $slug,
-                    );
-                    $query = new WP_Query($args);
+                        'hide_empty' => true
+                    ));
+                    if (!empty($taxonomies)) :
+
+                        foreach ($taxonomies as $category)
+                        {
+                            if ($category->parent == 0)
+                            {
+                                $term_linkParent = get_term_link($category);
                     ?>
+                                <div class="collection__sidebar--box">
+                                    <?php
+                                    $titleCategory = $category->name;
+                                    $titleShortCategory = str_replace('Colección', '', $titleCategory);
+                                    ?>
+                                    <h4 class="titlesidebar"><a href="<?php echo $term_linkParent ?>"><?php echo $titleShortCategory; ?></a></h4>
+                                    <ul class="collection__sidebar--list">
+                                        <?php
 
-                    <?php if ($query->have_posts()) : ?>
-
-                        <?php while ($query->have_posts()) : $query->the_post();
-                            global $product;
-                            $product = get_product(get_the_ID()); ?>
-                            <div class="ourproducts__item">
-                                <div class="ourproducts__item--image">
-                                    <figure>
-                                        <a href="<?php the_permalink(); ?>">
-                                            <?php the_post_thumbnail('full'); ?>
-                                        </a>
-                                    </figure>
-                                    <div class="ourproducts__item--imageShare">
-                                        <ul>
-                                            <li><a href="<?php the_permalink(); ?>"><i class="marta-search"></i></a></li>
-                                            <li><?php echo do_shortcode('[yith_wcwl_add_to_wishlist]'); ?></li>
-                                            <li><a href="<?php echo $product->add_to_cart_url(); ?>"><i class="marta-cart"></i></a></li>
-                                        </ul>
-                                    </div>
+                                        foreach ($taxonomies as $subcategory)
+                                        {
+                                            if ($subcategory->parent == $category->term_id)
+                                            { ?>
+                                                <?php $term_link = get_term_link($subcategory); ?>
+                                                <li>
+                                                    <a href="<?php echo $term_link; ?> " class="collection__sidebar--link">
+                                                        <?php echo esc_attr($subcategory->name); ?>
+                                                    </a>
+                                                </li>
+                                        <?php }
+                                        }
+                                        ?>
+                                    </ul>
                                 </div>
-                                <div class="ourproducts__item--information">
-                                    <div class="ourproducts__item--informationLeft">
-                                        <h3 class="title--product">
-                                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                        </h3>
-                                        <div class="ourproducts__item--informationPrice">
-                                            <span>Precio:</span>
-                                            <?php $price = get_post_meta(get_the_ID(), '_price', true); ?>
-                                            <?php echo wc_price($price); ?>
+                    <?php
+                            }
+                        }
+                    endif;
+                    ?>
+                </div>
+                <?php if (is_active_sidebar('sidebar__collection')) : ?>
+                    <div class="page__shop footer--topCol">
+                        <?php dynamic_sidebar('sidebar__collection'); ?>
+                    </div>
+                <?php endif; ?>
+
+            </div>
+            <div class="collection w-full md:w-10/12 px-4 pt-0">
+                <article class="collection__margin">
+                    <h2 class="collection__title"><?php echo $name; ?></h2>
+                    <div class="line line--gold ml-0"></div>
+                    <div class="collection__information">
+                        <?php $terminoDescription = get_field('informacion_coleccion', $taxonomy . '_' . $id); ?>
+                        <?php echo $terminoDescription; ?>
+                    </div>
+                    <div class="container mx-auto">
+                        <div class="collection__box">
+
+                            <?php
+                            $args = array(
+                                'posts_per_page' => 9,
+                                'post_type' => 'product',
+                                'taxonomy' => 'coleccion',
+                                'term' => $slug,
+                            );
+                            $query = new WP_Query($args);
+                            ?>
+
+                            <?php if ($query->have_posts()) : ?>
+
+                                <?php while ($query->have_posts()) : $query->the_post();
+                                    global $product;
+                                    $product = get_product(get_the_ID()); ?>
+                                    <div class="ourproducts__item">
+                                        <div class="ourproducts__item--image">
+                                            <figure>
+                                                <a href="<?php the_permalink(); ?>">
+                                                    <?php the_post_thumbnail('full'); ?>
+                                                </a>
+                                            </figure>
+                                            <div class="ourproducts__item--imageShare">
+                                                <ul>
+                                                    <li><a href="<?php the_permalink(); ?>"><i class="marta-search"></i></a></li>
+                                                    <li><?php echo do_shortcode('[yith_wcwl_add_to_wishlist]'); ?></li>
+                                                    <li><a href="<?php echo $product->add_to_cart_url(); ?>"><i class="marta-cart"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="ourproducts__item--information">
+                                            <div class="ourproducts__item--informationLeft">
+                                                <h3 class="title--product">
+                                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                                </h3>
+                                                <div class="ourproducts__item--informationPrice">
+                                                    <span>Precio:</span>
+                                                    <?php $price = get_post_meta(get_the_ID(), '_price', true); ?>
+                                                    <?php echo wc_price($price); ?>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
+                                <?php endwhile; ?>
 
-                                </div>
-                            </div>
-                        <?php endwhile; ?>
+                            <?php endif; ?>
 
-                    <?php endif; ?>
+                            <?php wp_reset_query(); ?>
+                        </div>
+                    </div>
+                </article><!-- Nuestros Productos -->
+            </div><!-- Collection and Our products -->
+        </div>
+    </div>
 
-                    <?php wp_reset_query(); ?>
-                </div>
-            </div>
-        </article><!-- Nuestros Productos -->
-
-    </section><!-- Collection and Our products -->
 
 </main>
 
