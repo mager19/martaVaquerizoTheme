@@ -185,5 +185,9 @@ function maybe_hide_price($price_html, $product)
     {
         return $price_html;
     }
-    return '';
+    else
+    {
+
+        return '';
+    }
 }
