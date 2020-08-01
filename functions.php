@@ -178,14 +178,12 @@ add_filter('wpseo_metabox_prio', 'billingadvantage__yoasttobottom');
 
 
 //Put this code in functions.php file
-add_action('woocommerce_product_query', 'themelocation_product_query');
-function themelocation_product_query($q)
+add_filter('woocommerce_get_price_html', 'maybe_hide_price', 10, 2);
+function maybe_hide_price($price_html, $product)
 {
-    $meta_query = $q->get('meta_query');
-    $meta_query[] = array(
-        'key'       => '_price',
-        'value'     => 0,
-        'compare'   => '>'
-    );
-    $q->set('meta_query', $meta_query);
+    if ($product->get_price() > 0)
+    {
+        return $price_html;
+    }
+    return '';
 }
