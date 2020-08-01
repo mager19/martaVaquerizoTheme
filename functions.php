@@ -175,3 +175,17 @@ function billingadvantage__yoasttobottom()
 }
 
 add_filter('wpseo_metabox_prio', 'billingadvantage__yoasttobottom');
+
+
+//Put this code in functions.php file
+add_action('woocommerce_product_query', 'themelocation_product_query');
+function themelocation_product_query($q)
+{
+    $meta_query = $q->get('meta_query');
+    $meta_query[] = array(
+        'key'       => '_price',
+        'value'     => 0,
+        'compare'   => '>'
+    );
+    $q->set('meta_query', $meta_query);
+}
