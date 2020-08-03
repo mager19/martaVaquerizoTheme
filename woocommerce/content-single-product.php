@@ -61,7 +61,18 @@ if (post_password_required())
 		 */
 		do_action('woocommerce_single_product_summary');
 		?>
-		<!-- Prueba de atributos -->
+
+		<!-- Information Pre-order -->
+
+		<?php if (get_field('pre_orden')) :
+			$tituloProducto = get_the_title();
+		?>
+			<div class="buttonPreorder">
+				<a class="btn btn--preorden" href="https://martavaquerizojewelry.com/encargos-especiales?nameproduct=<?php echo $tituloProducto; ?>">Pre Orden</a>
+			</div>
+		<?php endif; ?>
+		<!-- Atributos -->
+
 
 		<?php
 		$attributes = nt_product_attributes();

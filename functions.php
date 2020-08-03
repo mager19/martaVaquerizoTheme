@@ -177,6 +177,7 @@ function billingadvantage__yoasttobottom()
 add_filter('wpseo_metabox_prio', 'billingadvantage__yoasttobottom');
 
 
+
 //Put this code in functions.php file
 add_filter('woocommerce_get_price_html', 'maybe_hide_price', 10, 2);
 function maybe_hide_price($price_html, $product)

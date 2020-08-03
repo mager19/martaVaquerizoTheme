@@ -282,6 +282,10 @@ span.onsale {
         }
     }
 
+    .buttonPreorder {
+        order: 3;
+    }
+
     .woocommerce-product-attributes-item__label {
         &:after {
             content: " : ";
@@ -342,14 +346,6 @@ span.onsale {
 
 .woocommerce-product-details__short-description {
     .addtoany_share_save_container.addtoany_content.addtoany_content_bottom {
-        display: none;
-    }
-}
-
-// Fix product simple
-
-.product-type-simple {
-    .btn--preorden {
         display: none;
     }
 }
