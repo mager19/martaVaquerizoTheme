@@ -122,7 +122,7 @@ if (post_password_required())
 			<h2>Productos relacionados</h2>
 			<div class="products columns-4">
 				<?php foreach ($products as $p) : ?>
-					<div class="ourproducts__item">
+					<div class="ourproducts__item" id="productrelations-<?php echo $p->ID; ?>">
 						<div class="ourproducts__item--image">
 							<figure>
 								<a href="<?php the_permalink($p->ID); ?>" title="<?php the_title_attribute(array('post' => $p->ID)); ?>">
