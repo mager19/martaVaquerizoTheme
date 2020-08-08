@@ -176,19 +176,26 @@ function billingadvantage__yoasttobottom()
 
 add_filter('wpseo_metabox_prio', 'billingadvantage__yoasttobottom');
 
-
-
-//Put this code in functions.php file
-add_filter('woocommerce_get_price_html', 'maybe_hide_price', 10, 2);
-function maybe_hide_price($price_html, $product)
+// Mostrar texto si no hay precio en Woocommerce
+add_filter('woocommerce_get_price_html', 'hiddenPriceWoocommerce', 100, 2);
+function hiddenPriceWoocommerce($price, $product)
 {
-    if ($product->get_price() > 0)
+    if ($product->price <= 0)
     {
-        return $price_html;
+        return '<span class="preOrderHidden">Pre Order</span>';
     }
     else
     {
-
-        return '';
+        return $price;
     }
 }
+
+// quitamos la posibilidad de agregarlos al carrito
+
+function removePurchaseZeroPrice($purchasable, $product)
+{
+    if ($product->get_price() == 0)
+        $purchasable = false;
+    return $purchasable;
+}
+add_filter('woocommerce_is_purchasable', 'removePurchaseZeroPrice', 10, 2);

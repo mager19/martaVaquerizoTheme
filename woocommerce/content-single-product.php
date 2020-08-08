@@ -68,7 +68,7 @@ if (post_password_required())
 			$tituloProducto = get_the_title();
 		?>
 			<div class="buttonPreorder">
-				<a class="btn btn--preorden" href="https://martavaquerizojewelry.com/encargos-especiales?nameproduct=<?php echo $tituloProducto; ?>">Pre Orden</a>
+				<a class="btn btn--preorden" href="https://martavaquerizojewelry.com/encargos-especiales?nameproduct=<?php echo $tituloProducto; ?>">Pre Order</a>
 			</div>
 		<?php endif; ?>
 		<!-- Atributos -->
@@ -134,7 +134,12 @@ if (post_password_required())
 									<li><a href="<?php the_permalink($p->ID); ?>">
 											<i class="marta-search"></i></a></li>
 									<li><?php echo do_shortcode('[yith_wcwl_add_to_wishlist]'); ?></li>
-									<li><a href="<?php the_permalink($p->ID); ?>"><i class="marta-cart"></i></a></li>
+									<?php
+									$price = get_post_meta($p->ID, '_price', true);
+									if ($price !== '0')
+									{ ?>
+										<li><a href="<?php the_permalink($p->ID); ?>"><i class="marta-cart"></i></a></li>
+									<?php   }  ?>
 								</ul>
 							</div>
 						</div>
@@ -145,11 +150,16 @@ if (post_password_required())
 										<?php echo get_the_title($p->ID); ?>
 									</a>
 								</h3>
-								<div class="ourproducts__item--informationPrice">
-									<span>Precio:</span>
-									<?php $price = get_post_meta($p->ID, '_price', true); ?>
-									<?php echo wc_price($price); ?>
-								</div>
+								<?php
+
+								if ($price !== '0')
+								{
+								?>
+									<div class="ourproducts__item--informationPrice">
+										<span>Precio:</span>
+										<?php echo wc_price($price); ?>
+									</div>
+								<?php } ?>
 							</div>
 
 						</div>

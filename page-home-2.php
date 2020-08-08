@@ -160,9 +160,23 @@ get_header(); ?>
                                     </figure>
                                     <div class="ourproducts__item--imageShare">
                                         <ul>
-                                            <li><a href="<?php the_permalink(); ?>"><i class="marta-search"></i></a></li>
+                                            <li>
+                                                <a href="<?php the_permalink(); ?>">
+                                                    <i class="marta-search"></i>
+                                                </a>
+                                            </li>
                                             <li><?php echo do_shortcode('[yith_wcwl_add_to_wishlist]'); ?></li>
-                                            <li><a href="<?php echo $product->add_to_cart_url(); ?>"><i class="marta-cart"></i></a></li>
+                                            <?php
+                                            $price = get_post_meta(get_the_ID(), '_price', true);
+                                            if ($price !== '0')
+                                            { ?>
+                                                <li>
+                                                    <a href="<?php echo $product->add_to_cart_url(); ?>">
+                                                        <i class="marta-cart"></i>
+                                                    </a>
+                                                </li>
+                                            <?php   }  ?>
+
                                         </ul>
                                     </div>
                                 </div>
