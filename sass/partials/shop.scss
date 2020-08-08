@@ -438,3 +438,14 @@ div.berocket_single_filter_widget div.berocket_aapf_widget-wrapper * {
         display: none;
     }
 }
+
+.post-type-archive {
+    .ourproducts__item {
+        .title--product {
+            line-height: 1 !important;
+            a {
+                line-height: 1 !important;
+            }
+        }
+    }
+}
