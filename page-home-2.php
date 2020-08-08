@@ -45,9 +45,22 @@ get_header(); ?>
         <div class="container mx-auto">
             <?php if (have_rows('submenu_item')) : ?>
                 <?php while (have_rows('submenu_item')) : the_row(); ?>
-                    <a href="<?php the_sub_field('submenu_link'); ?>" class="specialItems__box">
-                        <?php the_sub_field('submenu_title'); ?>
-                    </a>
+                    <?php
+                    $link = get_sub_field('submenu_link');
+                    if ($link) :
+                        $link_url = $link['url'];
+                        $link_target = $link['target'] ? $link['target'] : '_self';
+                    ?>
+                        <a class="specialItems__box" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>">
+
+                            <?php if (get_sub_field('submenu_title')) : ?>
+                                <?php echo get_sub_field('submenu_title'); ?>
+                            <?php endif; ?>
+
+
+                        </a>
+                    <?php endif; ?>
+
                 <?php endwhile; ?>
             <?php endif; ?>
         </div>
