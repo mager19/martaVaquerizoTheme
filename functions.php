@@ -199,3 +199,21 @@ function removePurchaseZeroPrice($purchasable, $product)
     return $purchasable;
 }
 add_filter('woocommerce_is_purchasable', 'removePurchaseZeroPrice', 10, 2);
+
+
+// Custom login
+
+function modify_logo()
+{
+    $logo_style = '<style type="text/css">';
+    $logo_style .= 'h1 a {background-size:300px !important;width:100% !important;height:152px !important;background-image: url(' . get_stylesheet_directory_uri() . '/img/logo-marta.png) !important;}';
+    $logo_style .= '</style>';
+    echo $logo_style;
+}
+add_action('login_head', 'modify_logo');
+
+function custom_login_css()
+{
+    wp_enqueue_style('login-styles', get_stylesheet_directory_uri() . '/css/custom_login.css');
+}
+add_action('login_enqueue_scripts', 'custom_login_css');
