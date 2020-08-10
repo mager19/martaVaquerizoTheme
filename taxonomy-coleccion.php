@@ -95,7 +95,7 @@ get_header(); ?>
             </div>
             <div class="collection w-full md:w-10/12 px-4 pt-0">
                 <article class="collection__margin">
-                    <h2 class="collection__title"><?php echo $name; ?></h2>
+                    <h3 class="collection__title"><?php echo $name; ?></h3>
                     <div class="line line--gold ml-0"></div>
                     <div class="collection__information">
                         <?php $terminoDescription = get_field('informacion_coleccion', $taxonomy . '_' . $id); ?>
