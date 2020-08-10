@@ -44,9 +44,20 @@ if (!defined('ABSPATH'))
                     <?php echo do_shortcode("[astra_woo_mini_cart] "); ?>
                 </div>
                 <div class="loginHeader">
-                    <a href="<?php echo esc_url(wp_login_url(get_permalink())); ?>" title="Iniciar sesión">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon-user.svg">
-                    </a>
+                    <?php if (is_user_logged_in())
+                    { ?>
+                        <a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>" title="Mi Cuenta">
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon-user.svg">
+                        </a>
+                    <?php }
+                    else
+                    { ?>
+                        <a href="<?php echo esc_url(wp_login_url(get_permalink())); ?>" title="Iniciar Sesión">
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon-user.svg">
+                        </a>
+
+                    <?php } ?>
+
                 </div>
             </div>
             <div class="header__information">
