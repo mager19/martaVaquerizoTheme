@@ -18,7 +18,9 @@ get_header(); ?>
 <main class="bg-white">
 
     <?php
-    $id = get_queried_object()->term_id;;
+
+    $id = get_queried_object()->term_id;
+    $parent = get_queried_object()->parent;
     $taxonomy = 'coleccion';
     $term = get_term($id, $taxonomy);
     $slug = $term->slug;
@@ -27,14 +29,50 @@ get_header(); ?>
     <section class="hero__collection">
         <div class="container mx-auto hero__collection--box">
             <figure class="hero__collection--image md:w-4/12 lg:w-5/12">
-                <?php $imageColeccion = get_field('imagen_pequena', $taxonomy . '_' . $id); ?>
-                <img src="<?php echo $imageColeccion; ?>" alt="" />
+                <?php
+                if ($parent !== 0)
+                {
+                    $imageColeccion = get_field('imagen_pequena', $taxonomy . '_' . $parent); ?>
+                    <img src="<?php echo $imageColeccion; ?>" alt="" />
+                <?php }
+                else
+                {
+                    $imageColeccion = get_field('imagen_pequena', $taxonomy . '_' . $id); ?>
+                    <img src="<?php echo $imageColeccion; ?>" alt="" />
+                <?php }
+                ?>
+
             </figure>
             <div class="hero__collection--information md:w-6/12 lg:w-5/12 md:ml-auto">
-                <h1 class="title__section"><?php echo $name; ?></h1>
+                <?php
+                if ($parent !== 0)
+                { ?>
+                    <h1 class="title__section">
+                        <?php
+                        $id = $parent;
+                        if ($term = get_term_by('id', $id, 'coleccion'))
+                        {
+                            echo $term->name;
+                        }
+                        ?>
+                    </h1>
+                <?php }
+                else
+                { ?>
+                    <h1 class="title__section"><?php echo $name; ?></h1>
+                <?php }   ?>
+
                 <div class="line line--gold mb-5"></div>
-                <?php $resumenColeccion = get_field('resumen_coleccion', $taxonomy . '_' . $id); ?>
-                <?php echo $resumenColeccion; ?>
+                <?php
+                if ($parent !== 0)
+                {
+                    $resumenColeccion = get_field('resumen_coleccion', $taxonomy . '_' . $parent);
+                }
+                else
+                {
+                    $resumenColeccion = get_field('resumen_coleccion', $taxonomy . '_' . $id);
+                }
+                echo $resumenColeccion; ?>
             </div>
         </div>
     </section><!-- Hero Image -->
@@ -159,6 +197,8 @@ get_header(); ?>
             </div><!-- Collection and Our products -->
         </div>
     </div>
+
+
 
 
 </main>
